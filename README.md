@@ -1,7 +1,7 @@
 # ceng444: Language processors
-Middle East Technical University CENG introductory compiler course: Language Processors
+Middle East Technical University CENG introductory compiler course
 
-This is the website of the course when I teach it. Teaching it Fall 2018.
+This is the website of the course when I teach it. 
 
 <b>Term</b>: Fall 2018
 
