@@ -1,11 +1,11 @@
 # ceng444
-METU CENG introductory compiler course: Language Processors
+Middle East Technical University CENG introductory compiler course: Language Processors
 
 This is the website of the course when I teach it. Teaching it Fall 2018.
 
 <b>Term</b>: Fall 2018
 
-<b>Instructor</b>: Cem Boz\c{s}ahin.  TA: TBA
+<b>Instructor</b>: Cem Bozsahin.  TA: TBA
 
 <b>Office hours</b>: Open door except lecture days (TTh)
  
@@ -20,11 +20,21 @@ Morgan Kaufmann, 2012
 <b>Course outline</b>
 
 <ol>
-<li> Introduction: a wlak through all the stages of compiling
+<li> Introduction: a walk through all stages of compiling
 <li> Scanning (lexical analysis)
 <li> Parsing (syntactic analysis)
-<li> Intermediare code
+<li> Intermediate code
 <li> Virtual machines
 <li> Code generation (syntax-directed translation)
 <li> Scope handling and run-time
+</ol>
+
+<b>Course conduct</b>: 11 weeks of lecture, 2 weeks of in-class labs; 1 week in-class exam
+
+<b>Grading</b>:
+<ol>
+<li> Mid-term exam: %25
+<li> Lab 1 (LL parsing): %15
+<li> Lab 2 (LR parsing): %35
+<li> Final exam: %25
 </ol>
