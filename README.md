@@ -7,9 +7,9 @@ This is the website of the course when I teach it. Teaching it Fall 2018.
 
 <b>Instructor</b>: Cem Bozsahin.  TA: TBA
 
-<b>Office hours</b>: Open door except lecture days (TTh)
+<b>Office hours</b>: Open door except lecture days (i.e. except TTh this term)
  
-<b>Textbook}</b>
+<b>Textbook</b>:
 Engineering a compiler</b>, by keith Cooper and Linda Torczon, 2nd ed,
 Morgan Kaufmann, 2012
 
@@ -20,13 +20,13 @@ Morgan Kaufmann, 2012
 <b>Course outline</b>
 
 <ol>
-<li> Introduction: a walk through all stages of compiling
-<li> Scanning (lexical analysis)
-<li> Parsing (syntactic analysis)
-<li> Intermediate code
-<li> Virtual machines
-<li> Code generation (syntax-directed translation)
-<li> Scope handling and run-time
+<li> Introduction: a walk through all stages of compiling (1 week)
+<li> Scanning (lexical analysis) (1)
+<li> Parsing (syntactic analysis) (3)
+<li> Intermediate code (1)
+<li> Virtual machines (1)
+<li> Code generation (syntax-directed translation) (2)
+<li> Scope handling and run-time (2)
 </ol>
 
 <b>Course conduct</b>: 11 weeks of lecture, 2 weeks of in-class labs; 1 week in-class exam
