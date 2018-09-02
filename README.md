@@ -29,12 +29,17 @@ Morgan Kaufmann, 2012
 <li> Scope handling and run-time (2)
 </ol>
 
-<b>Course conduct</b>: 11 weeks of lecture, 2 weeks of in-class labs; 1 week in-class exam
+<b>Course conduct</b>: 11 weeks of lecture, 2 weeks of in-class labs; 1 week in-class exam.
+<p>We will use two tools for compiling, <a href"http://www.antlr.org/">antLR</a>
+for LL, and LALR parser of Mark Johnson.
+There is an interface to LALR parser written by me, called <code>yalalr</code>, which
+is available at my github repo.
+<p>In-class labs introduce antLR and yalalr (and Lisp on which it is based.)
 
 <b>Grading</b>:
 <ol>
 <li> Mid-term exam: %25
-<li> Lab 1 (LL parsing): %15
-<li> Lab 2 (LR parsing): %35
+<li> mini-project 1 (LL parsing): %20
+<li> mini-project 2 (LALR parsing): %30
 <li> Final exam: %25
 </ol>
