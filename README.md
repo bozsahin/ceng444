@@ -30,9 +30,9 @@ Morgan Kaufmann, 2012
 </ol>
 
 <b>Course conduct</b>: 11 weeks of lecture, 2 weeks of in-class labs; 1 week in-class exam.
-<p>We will use two tools for compiling, <a href"http://www.antlr.org/">antLR</a>
+<p>We will use two tools for compiling, <a href="http://www.antlr.org/">antLR</a>
 for LL, and LALR parser of Mark Johnson.
-There is an interface to LALR parser written by me, called <code>yalalr</code>, which
+There is an interface to LALR parser written by me, called<a href="https://github.com/bozsahin/yalalr">yalalr</a>, which
 is available at my github repo.
 <p>In-class labs introduce antLR and yalalr (and Lisp on which it is based.)
 
