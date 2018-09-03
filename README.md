@@ -33,8 +33,8 @@ Morgan Kaufmann, 2012
 
 <p>We will use two tools for compiler design, <a href="https://github.com/antlr/antlr4">antLR</a>
 for LL, and LALR parser of Mark Johnson.
-There is an interface to LALR parser written by me, called <a href="https://github.com/bozsahin/yalalr">yalalr</a>, which
-is available at my github repo.
+There is an interface to LALR parser written by me, called <a href="https://github.com/bozsahin/yalalr">yalalr</a>.
+ 
 <p>In-class labs introduce antLR and yalalr (and Lisp on which yalalr is based.)
 
 <p> The second project includes code generation and execution, using
