@@ -7,7 +7,7 @@ This is the website of the course when I teach it.
 
 <b>Instructor</b>: Cem Bozsahin.  TA: TBA
 
-<b>Office hours</b>: Open door except lecture days (i.e. except TTh this term)
+<b>Office hours</b>: Open door except lecture days (i.e. except TTh this term; my office is B-209 at Informatics, tel: 7758)
  
 <b>Textbook</b>:
 Engineering a compiler</b>, by keith Cooper and Linda Torczon, 2nd ed,
