@@ -10,7 +10,7 @@ This is the website of the course when I teach it.
 <b>Office hours</b>: Open door except lecture days (i.e. except TTh this term; my office is B-209 at Informatics, tel: 7758)
  
 <b>Textbook</b>:
-Engineering a compiler</b>, by keith Cooper and Linda Torczon, 2nd ed,
+Engineering a compiler</b>, by Keith Cooper and Linda Torczon, 2nd ed,
 Morgan Kaufmann, 2012
 
 <b>Catalog description</b>: Formal description and classification of programming languages. Syntactic specification. The parsing problem. Top-down and bottom-up parsing. Attaching semantics to syntax. Translator writing systems. Translator writing case study.
