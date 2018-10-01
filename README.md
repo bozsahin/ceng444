@@ -52,8 +52,8 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
 <ol>
  <li> Mid-term exam: %25 (<b> November 15, 2018, in class</b>)
 <li> mini-project 1 (LL parsing and abstract syntax trees): %20
-<li> mini-project 2 (LALR parsing and code generation): %30
-<li> Final exam: %25
+<li> mini-project 2 (LALR parsing and code generation): %35
+<li> Final exam: %20
  <li><b>Gazozuna Kompaylır Ödülü</b> : priceless!!
   <br> Highest honour we give out to best successful completion of the second project.
   <br> It is, ehm, <a href="https://www.linkedin.com/in/merihakar">officially recognized</a>, 
