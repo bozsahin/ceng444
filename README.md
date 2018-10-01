@@ -50,7 +50,7 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
 <li> mini-project 1 (LL parsing and abstract syntax trees): %20
 <li> mini-project 2 (LALR parsing and code generation): %30
 <li> Final exam: %25
- <li> Gazozuna Kompaylir odulu: priceless!!
+ <li><b>Gazozuna Kompaylir</b> odulu: priceless!!
   <br> Highest honour we give out to successful completion of the second project.
   <br> It is, ehm, <a href="https://www.linkedin.com/in/merihakar">officially recognized</a>, 
   <br> and anyone reading your CV at least in Turkey would know what you achieved.
