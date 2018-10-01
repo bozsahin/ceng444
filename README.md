@@ -39,7 +39,7 @@ for LL, and LALR parser of Mark Johnson for LR.
 <p>
 There is an interface to LALR parser written by me, called <a href="https://github.com/bozsahin/yalalr">yalalr</a>.
  
-<p>In-class labs introduce antLR and yalalr (and Lisp on which yalalr is based.)
+<p>In-class labs introduce antLR, yalalr, MIPS/spim and  a bit of Lisp.
 
 <p> The second project includes code generation and execution, using
 MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net/">spim</a>.
