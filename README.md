@@ -46,7 +46,7 @@ There is an interface to LALR parser written by me, called <a href="https://gith
 <p>In-class labs introduce antLR, yalalr, MIPS/spim and  a bit of Lisp.
 
 <p> The second project includes code generation and execution, using
-MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net/">spim</a>.
+MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net/">spim</a> for code generation.
 
 <b>Grading</b>:
 <ol>
