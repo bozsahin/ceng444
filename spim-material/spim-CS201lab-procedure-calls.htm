@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0066)ftp://www.cs.uregina.ca/pub/class/201/SPIM-Procedures/lecture.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   
+   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+   <title>CS201 Lab</title>
+   <link rel="stylesheet" type="text/css" href="ftp://www.cs.uregina.ca/Style/lab.css">
+</head>
+<body bgcolor="white">
+
+<h1> CS201 Lab: SPIM Procedure Calls </h1>
+
+<p>
+</p><pre>
+        In CS110, you have learned how to write user defined functions using C++.
+        In CS201, you can define similar functions using SPIM.  
+        This lab focuses on implementing procedure/function calls in SPIM.
+
+</pre>
+
+<h2> Procedure Calls  </h2>
+<p>
+In this section, we are going to examine the code
+used to implement procedure and function calls.
+Procedures are the most important technique for structuring programs. 
+</p><p>
+
+In C++, a function is called by its name with required arguments.
+When a function is called, the system will execute the function.
+When the function is finished, it returns a value to the calling function
+and the execution continues from the next statement right after 
+the function call.
+
+</p><p>
+In SPIM, a function/procedure can be called by the code/control of 
+<b>jal  functionname/procedurename</b>.
+The code/control <b>jr $ra</b> can be used at the end of a procedure 
+to return the control back to the
+statement right after the function/procedure call.
+When <b>jal  functionname/procedurename</b> is executed, <b>$ra</b> is used to
+hold the return address (PC+4).
+
+</p><p>
+The following picture illustrates functions implemented in SPIM.
+
+</p><p>
+<img src="procedure-call.gif">
+</p><p>
+
+</p><h2>Passing Parameters </h2>
+
+The first four parameters of a procedure are passed in argument registers
+<b>$a0, $a1, $a2, $a3</b>.  Additional parameters are passed using the stack.
+<!--We will implement that part in the later labs.--> 
+<b>$v0 and $v1</b> are used to store returned values. 
+The following demonstrates procedure calls and passing and returning values 
+from or to the calling function. 
+<pre>	 
+##
+##	Program name:	sum.s 
+##
+## 	The program will prompt the user to enter an integer N.
+##	A user defined function "sumup" will be called.
+
+##	The function "sumup" will calculate the sum of 
+##	the integers from 1 to N (N will be passed to
+##	the function "sumup" in register $a0, and 
+##	the sum will be returned in $v0).
+
+##
+##	The program will print out the final result sum.
+##		
+##
+##		v0 - reads in an integer
+##		t0 - holds the sum 
+## 		a0 - points to strings to be printed 
+##		   - also used to pass N to "sumup" 
+##
+
+#################################################
+#                                               #
+#               text segment                    #
+#                                               #
+#################################################
+
+	.text
+	.globl __start
+__start:		# execution starts here
+
+	la $a0,prompt1	# print prompt on terminal
+	li $v0,4 	# system call to print
+	syscall		# out a string
+
+	
+	
+	li $v0,5	# syscall 5 reads an integer 
+	syscall         
+
+	move $a0, $v0	# copy the integer to $a0
+
+	jal sumup	# procedure/function call
+
+	move $t0, $v0	# copy the sum to $t0
+
+	
+	la $a0,ans1	# print string before the sum
+	li $v0,4
+	syscall 
+
+	move $a0,$t0	# print the sum
+	li $v0,1
+	syscall
+
+	
+	la $a0,endl	# syscal to print out
+	li $v0,4	# a new line
+	syscall 
+
+	li $v0,10	# exit
+	syscall		# Bye!
+
+############################################################
+##
+##	The function "sumup" will calculate the sum of 
+##	the integers from 1 to N (N will be passed to
+##	the function "sumup" in register $a0, and 
+##	the sum will be returned in $v0).
+##
+############################################################
+
+sumup:
+	move $v0, $0		# Initialize the sum to 0
+	#li  $v0, 0   		# OR initialize it this way
+
+loop:	add $v0, $v0, $a0	# $v0 = $v0 + $a0
+	addi $a0, $a0, -1	# $a0 = $a0 - 1
+	bnez $a0, loop		# branch to loop if $a0 != 0
+
+	jr $ra			# return to the calling function
+
+
+
+#################################################
+#  						#
+#               data segment			#           
+#						#
+#################################################
+
+        .data
+	
+	prompt1:	.asciiz "Please enter an integer:  "
+	
+	ans1:		.asciiz "The sum is "
+   	
+	endl:		.asciiz "\n"	   
+
+##
+## 	end of file sum.s
+
+</pre>
+
+<!----
+<h3>Another Version for the Hardware Implementation</h3> 
+To prepare for running the above program on the hardware, 
+here is another version of it using register numbers 
+instead of using register names.
+
+<pre>
+	 
+##
+##	Program name:	sum.s 
+##
+## 	The program will prompt the user to enter an integer N.
+##	A user defined function "sumup" will be called.
+
+##	The function "sumup" will calculate the sum of 
+##	the integers from 1 to N (N will be passed to
+##	the function "sumup" in register $a0, and 
+##	the sum will be returned in $v0).
+
+##
+##	The program will print out the final result sum.
+##		
+##
+##		v0 - reads in an integer
+##		t0 - holds the sum 
+## 		a0 - points to strings to be printed 
+##		   - also used to pass N to "sumup" 
+##
+##	The mapping of registers for your reference:
+##
+##		$v0 => $2
+##		$v1 => $3
+##		$a0 => $4
+##		$a1 => $5
+##		$a2 => $6
+##		$a3 => $7
+##		$t0 - $t7 => $8 - $15
+##		$ra - $31
+##
+##	For more info, check the table in lab 8.
+##
+##
+
+#################################################
+#						#
+#               text segment			#
+#						#
+#################################################
+
+	.text
+	.globl __start
+__start:                # execution starts here
+
+	la $4,prompt1   # print prompt on terminal
+	li $2,4         # system call to print
+	syscall         # out a string
+
+	
+	
+	li $2,5		# syscall 5 reads an integer 
+	syscall         
+
+	move $4, $2	# copy the integer to $a0
+
+	jal sumup	# procedure/function call
+
+	move $8, $2	# copy the sum to $t0
+
+	
+	la $4,ans1	# print string before the sum
+	li $2,4
+	syscall 
+
+	move $4,$8	# print the sum
+	li $2,1
+	syscall
+
+	
+	la $4,endl	# syscal to print out
+	li $2,4		# a new line
+	syscall 
+
+	li $2,10	# exit
+	syscall		# Bye!
+
+############################################################
+##
+##	The function "sumup" will calculate the sum of 
+##	the integers from 1 to N (N will be passed to
+##	the function "sumup" in register $a0, and 
+##	the sum will be returned in $v0).
+##
+############################################################
+
+sumup:
+	move $2, $0		# Initialize the sum to 0
+	#li  $2, 0   		# OR initialize it this way
+
+loop:	add $2, $2, $4		# $v0 = $v0 + $a0
+	addi $4, $4, -1		# $a0 = $a0 - 1
+	bnez $4, loop		# branch to loop if $a0 != 0
+
+	jr $31			# return to the calling function
+
+
+
+#################################################
+#						#
+#               data segment			#
+#						# 
+#################################################
+
+        .data
+	
+	prompt1:	.asciiz "Please enter an integer:  "
+	
+	ans1:		.asciiz "The sum is "
+   	
+	endl:		.asciiz "\n"	   
+
+##
+## 	end of file sum.s
+
+</pre>
+----->
+
+
+<h3>Another example: </h3>
+
+<pre>
+##
+## 	The program --- Is-vowel.s will check if an entered character is a vowel.
+##
+##		- It will ask the user for a letter (character),
+##		  
+##		- then call a procedure ("vowelp") to check if it is a vowel.
+##		- It will return a value to the calling function, 
+##		  0 means no, and 1 means yes,
+##		- and then print a message from the calling program.
+##		
+##		v0 - used for syscalls
+##		   - holds 0 or 1 after the call to "vowelp"
+##		t0 - holds the returned value from the procedure call
+## 		a0 - points to strings to be printed 
+##		   - also used to pass a letter to "vowelp" 
+##
+##
+
+#################################################
+#						#
+#               text segment			#
+#						#
+#################################################
+
+	.text
+	.globl __start
+__start:                # execution starts here
+
+	la $a0,prompt1  # print prompt on terminal
+	li $v0,4        # system call to print
+	syscall         # out a string
+
+	la $a0,letter
+	li $a1,5
+	li $v0, 8	# syscall 8 reads string/letter
+	syscall
+
+	la $a1, letter	# prepare for passing a letter to the procedure
+	lb $a0,($a1)
+
+	jal vowelp	# procedure call
+
+	move $t0,$v0	# save the value returned from the procedure call
+
+	beqz $t0, NotVowel
+	
+
+	la $a0,ans1	# syscall to print out
+	li $v0,4	# the message - is vowel
+	syscall 
+	j End
+
+NotVowel:
+	la $a0,message	# syscall to print out
+	li $v0,4	# the message - not vowel
+	syscall 
+
+End:	la $a0,endl	# syscall to print out
+	li $v0,4	# a new line
+	syscall 
+
+	li $v0,10
+	syscall		# Bye!
+
+##############################################################
+## Define the procedure vowelp
+##############################################################
+
+vowelp:
+
+	li $v0, 0	# initialize $v0 to 0
+	beq $a0,'a',yes
+	beq $a0,'e',yes
+	beq $a0,'i',yes
+	beq $a0,'o',yes
+	beq $a0,'u',yes
+	jr $ra
+yes:	li $v0,1
+	jr $ra
+	
+
+#################################################
+#						#
+#               data segment			#
+#						#
+#################################################
+
+        .data
+	letter:		.space 5
+	prompt1:	.asciiz "Enter a letter: "
+	
+	message:	.asciiz "The character entered is not a vowel."
+	ans1:		.asciiz "The character entered is a vowel. "
+	endl:		.asciiz "\n"	   
+
+##
+## 	end of file Is-vowel.s
+
+</pre>
+
+<!-----
+<h3>Another Version for the Hardware Implementation</h3> 
+
+To prepare for running the above program on the hardware, 
+here is another version of it using register numbers 
+instead of using register names.
+
+<pre>
+
+##
+## 	The program --- Is-vowel.s will check if an entered character is a vowel.
+##
+##		- It will ask the user for a letter (character),
+##		  
+##		- then call a procedure (vowelp) to check if it is a vowel.
+##		- It will return a value to the calling function, 
+##		  0 means no, and 1 means yes,
+##		- and then print a message from the calling program.
+##		
+##		v0 - used for syscalls
+##		   - holds 0 or 1 after the call to "vowelp"
+##		t0 - holds the returned value from the procedure call
+## 		a0 - points to strings to be printed 
+##		   - also used to pass a letter to "vowelp" 
+##
+##
+##	The mapping of registers for your reference:
+##
+##		$v0 => $2
+##		$v1 => $3
+##		$a0 => $4
+##		$a1 => $5
+##		$a2 => $6
+##		$a3 => $7
+##		$t0 - $t7 => $8 - $15
+##		$ra - $31
+##
+##	For more info, check the table in lab 8.
+##
+
+#################################################
+#						#
+#               text segment			#
+#						#
+#################################################
+
+	.text
+	.globl __start
+__start:                # execution starts here
+
+	la $4,prompt1   # print prompt on terminal
+	li $2,4         # system call to print
+	syscall         # out a string
+
+	la $4,letter
+	li $5,5
+	li $2, 8	# syscall 8 reads string/letter
+	syscall
+
+	la $5, letter	# prepare for passing a letter to the procedure
+	lb $4,($5)
+
+	jal vowelp	# procedure call
+
+	move $8,$2	# save the value returned from the procedure call
+
+	beqz $8, NotVowel
+	
+
+	la $4,ans1	# syscall to print out
+	li $2,4	 	# the message - is vowel
+	syscall 
+	j End
+
+NotVowel:
+	la $4,message	# syscall to print out
+	li $2,4		# the message - not vowel
+	syscall 
+
+End:	la $4,endl	# syscall to print out
+	li $2,4		# a new line
+	syscall 
+
+	li $2,10
+	syscall		# Bye!
+
+##############################################################
+## Define the procedure vowelp
+##############################################################
+
+vowelp:
+
+	li $2, 0	# initialize $v0 to 0
+	beq $4,'a',yes
+	beq $4,'e',yes
+	beq $4,'i',yes
+	beq $4,'o',yes
+	beq $4,'u',yes
+	jr $31
+yes:	li $2,1
+	jr $31
+	
+
+#################################################
+#                                               #
+#               data segment                    #
+#                                               #
+#################################################
+
+        .data
+	letter:		.space 5
+	prompt1:	.asciiz "Enter a letter: "
+	
+	message:	.asciiz "The character entered is not a vowel."
+	ans1:		.asciiz "The character entered is a vowel. "
+	endl:		.asciiz "\n"	   
+
+##
+## 	end of file Is-vowel.s
+
+</pre>
+---->
+<hr>
+
+<h2><a href="http://www.cs.uregina.ca/Links/class-info/201/SPIM-Procedures/lab01.html">Lab Assignment</a>  </h2>
+
+<!----------------
+<h2>Summary  </h2>
+<P>
+<pre>
+
+</pre>
+<p>
+<p>
+<center>
+<table border=3 width="75%">
+<td>
+    <center>This page last modified: 
+	<br><!--#flastmod file = "lecture.html"--> 
+    
+
+    <center> <font color="black">
+    Accessed &nbsp;
+    <img src="./spim-CS201lab-procedure-calls_files/Count.cgi" align="buttom"> &nbsp; times.
+  
+
+
+</font></center><font color="black">
+
+----------------&gt;
+
+ <br><img src="./spim-CS201lab-procedure-calls_files/copybtn.gif" height="30" width="30" border="0" align="CENTER">
+    <b><i>
+    Copyright: Department of Computer Science, University of Regina.
+    </i></b>
+
+
+
+
+
+</font></body></html>
