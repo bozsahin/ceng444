@@ -13,7 +13,10 @@ This is the website of the course when I teach it.
 
 <b>Textbook</b>:
 Engineering a compiler</b>, by Keith Cooper and Linda Torczon, 2nd ed,
-Morgan Kaufmann, 2012
+Morgan Kaufmann, 2012.
+
+This is a professional reference, used throughout the world. We will cover a fragment of it,
+and it's great for future reference if you are into this sort of things.
 
 <b>Catalog description</b>: Formal description and classification of programming languages. Syntactic specification. The parsing problem. Top-down and bottom-up parsing. Attaching semantics to syntax. Translator writing systems. Translator writing case study.
 
