@@ -54,5 +54,5 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
   <br> Highest honour we give out to successful completion of the second project.
   <br> It is, ehm, <a href="https://www.linkedin.com/in/merihakar">officially recognized</a>, 
   <br> and anyone reading your CV at least in Turkey would know what you achieved.
-  <br>Usually handed by the beginning of next term after completion, with a ceremony!
+  <br>Usually handed by the end of first spring term after completion, with a ceremony!
 </ol>
