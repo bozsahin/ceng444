@@ -19,7 +19,7 @@ Morgan Kaufmann, 2012
 
 <b>Course objectives</b>: Assuming familiarity with formal grammars, i.e., Ceng280 material, we emphasize modern tools and techniques for compiler construction, which can be used for any task of mapping from one formal representation to another.
 
-<b>Course prerequisite<b>: Officially, none. Unofficially, you need to feel comfortable with
+<b>Course prerequisite</b>: Officially, none, according to METU catalog. Unofficially, you need to feel comfortable with
  programming, data structures, and formal languages. 3rd-year standing in CS, or CENG280 in the bag, or
  COGS501 *and* COGS502 will suffice.
 
