@@ -37,10 +37,13 @@
 (defparameter *st* (mk-symbol-table)) ;; create once, use many times
 
 (defun add-entry (key val)
-  "complain if key is already in the table. Return nil is error, t otherwise"
+  "complain if key is already in the table. Return nil if error, t otherwise.
+  'format t' returns nil as intended, but false clause needs progn because
+  setf returns 'val', which can be nil but and it must be added as such.
+  The idea here is that the caller of add-entry might take action depending
+  on its truth value (in a real compiler)."
   (if (gethash key *st*)
-    (progn (format t "~%Duplicate key: ~S; ignoring the value: ~S" key val)
-	   nil)
+    (format t "~%Duplicate key: ~S; ignoring the value: ~S" key val)
     (progn (setf (gethash key *st*) val)
 	   t)))
 
@@ -56,6 +59,9 @@
   (add-entry (mk-key 'x '(1)) (mk-val 'real 4))   ; override complaint
   (add-entry (mk-key 'x '(1 2 1)) (mk-val 'float 4))   ; override complaint (that's why the hashtable must
                                                      ; be of #'equal type so lists can be considered same)
+  (add-entry (mk-key 'y '(1)) (mk-val 'int 33))    ; these are different keys, no complaint
+  (add-entry (mk-key 'x '(1 3)) (mk-val 'real 11))
+  (add-entry (mk-key 'x '(2 2 1)) (mk-val 'char 44))
   )
 
 (defun demo-show-st ()
