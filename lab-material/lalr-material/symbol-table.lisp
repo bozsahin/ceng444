@@ -37,10 +37,12 @@
 (defparameter *st* (mk-symbol-table)) ;; create once, use many times
 
 (defun add-entry (key val)
-  "complain if key is already in the table"
+  "complain if key is already in the table. Return nil is error, t otherwise"
   (if (gethash key *st*)
-    (format t "~%Duplicate key: ~S; ignoring the value: ~S" key val)
-    (setf (gethash key *st*) val)))
+    (progn (format t "~%Duplicate key: ~S; ignoring the value: ~S" key val)
+	   nil)
+    (progn (setf (gethash key *st*) val)
+	   t)))
 
 
 (defun demo-make-st ()
