@@ -1,4 +1,4 @@
-Project 1: Write an LL parser in antlr4 for XPLN language, with the following functionality.
+<b>Project 1:</b> Write an LL parser in antlr4 for XPLN language, with the following functionality.
 
 <b>Due : November 27, in a single zip file, sent to me directly.</b>
 
