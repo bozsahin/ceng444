@@ -3,6 +3,9 @@
 <b>Due : November 27, in a single zip file, sent to me directly.</b>
 
 <ol>
+  
+<li>Each project is individual, and meant to be original effort. Sorry we cannot accept group projects.
+  
 <li> Language spec is same for both projects, which is XPLN in the higher directory.
 
 <li>Your LL parser should take an XPLN program as input, print the parse tree in Lisp format if it is well-formed (using -tree option, rather than -gui).
@@ -26,6 +29,9 @@ must have at least one <code>return</code> statement. It is not our present conc
 
 <li>Bundle your files, including README and antlr/java code, examples, and their output on your side, in the zip file, so that we can
 run the code and compare the output with yours.
+  
+<li>I will ask some good solutions to send me a <code>pull request</code> if they wish to be included in this repo.
+  If you want to make a separate repo on your own, this is fine too.
 </ol>
 
 All best.
