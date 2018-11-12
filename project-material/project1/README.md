@@ -6,7 +6,7 @@
   
 <li>Each project is individual, and meant to be original effort. Sorry we cannot accept group projects.
   
-<li> Language spec is same for both projects, which is XPLN in the higher directory.
+<li> Language spec is same for both projects, which is XPLN in the upper directory.
 
 <li>Your LL parser should take an XPLN program as input, print the parse tree in Lisp format if it is well-formed (using -tree option, rather than -gui).
 
