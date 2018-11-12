@@ -6,7 +6,10 @@ Language spec is same for both projects, which is XPLN in the higher directory.
 
 Your LL parser should take an XPLN program as input, print the parse tree in Lisp format if it is well-formed (using -tree option, rather than -gui).
 
-If it is not well-formed, the errors produced by antlr4 suffice for the current project, and you can produce more for bonus.
+Therefore your LL parser must contain a fragment of rules in your antlr'd XPLN grammar for lexical analysis for all
+legitimate tokens of XPLN.
+
+If the input XPLN program is not well-formed, the errors produced by antlr4 suffice for the current project, and you can produce more for bonus.
 
 For testing, make up some XPLN examples of your own, good ones and bad ones, and include their output in your zip file.
 Write a README to help the evaluator check how these examples can be tested independently.
