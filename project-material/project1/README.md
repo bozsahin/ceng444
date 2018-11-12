@@ -11,7 +11,8 @@ legitimate tokens of XPLN.
 
 If the input XPLN program is not well-formed, the errors produced by antlr4 suffice for the current project, and you can produce more for bonus.
 
-For testing, make up some XPLN examples of your own, good ones and bad ones, and include their output in your zip file.
+For testing, make up some XPLN examples of your own, good ones and bad ones, including programs with good tokens and
+bad tokens, and programs with good tokens but ill-formed structure, and include their output in your zip file.
 Write a README to help the evaluator check how these examples can be tested independently.
 
 There are some constraints in well-formed XPLN programs, which you can handle by tree-walking or some other means.
