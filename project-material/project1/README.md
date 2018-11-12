@@ -4,7 +4,7 @@
 
 <ol>
   
-<li>Each project is individual, and meant to be original effort. Sorry we cannot accept group projects.
+<li>Each project is individual work, and meant to be original effort. Sorry we cannot accept group projects.
   
 <li> Language spec is same for both projects, which is XPLN in the upper directory.
 
