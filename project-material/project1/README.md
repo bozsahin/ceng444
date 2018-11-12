@@ -13,6 +13,10 @@
 <li>Therefore your LL parser must contain a fragment of rules in your antlr'd XPLN grammar for lexical analysis for all
 legitimate tokens of XPLN.
 
+<li>It is up to you whether to remove left-recursion in the cover grammar of XPLN given in the specs, because
+  antlr4 (but not antlr3) can handle DIRECT left recursion. However, you are responsible for your design
+  decisions and adhering to intended functionality in the project.
+
 <li>If the input XPLN program is not well-formed, the errors produced by antlr4 suffice for the current project, and you can produce more for bonus.
 
 <li>For testing, make up some XPLN examples of your own, good ones and bad ones, including programs with good tokens and
