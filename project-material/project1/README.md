@@ -17,3 +17,9 @@ The tree-walking system of antlr4 is flexible enough so that you can override th
 In project 1, you are expected to implement just one condition for well-formed XPLN programs: The main body and every function defined
 must have at least one <code>return</code> statement. It is not our present concern whether that <code>return</code> statement is reachable, because this requires flow analysis, which we will talk about later.
 
+Bundle your files, including README and antlr/java code, and their output on your side, in the zip file, so that we can
+run the code and compare the output with yours.
+
+All best.
+
+-cemB
