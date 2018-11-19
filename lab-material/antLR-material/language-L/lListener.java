@@ -37,15 +37,15 @@ public interface lListener extends ParseTreeListener {
 	 */
 	void exitDef(lParser.DefContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link lParser#f}.
+	 * Enter a parse tree produced by {@link lParser#e}.
 	 * @param ctx the parse tree
 	 */
-	void enterF(lParser.FContext ctx);
+	void enterE(lParser.EContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link lParser#f}.
+	 * Exit a parse tree produced by {@link lParser#e}.
 	 * @param ctx the parse tree
 	 */
-	void exitF(lParser.FContext ctx);
+	void exitE(lParser.EContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link lParser#t}.
 	 * @param ctx the parse tree
@@ -56,4 +56,14 @@ public interface lListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitT(lParser.TContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link lParser#f}.
+	 * @param ctx the parse tree
+	 */
+	void enterF(lParser.FContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link lParser#f}.
+	 * @param ctx the parse tree
+	 */
+	void exitF(lParser.FContext ctx);
 }

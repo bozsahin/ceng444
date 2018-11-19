@@ -8,17 +8,20 @@ grammar l;
 start: s '$';
 
 s : def s
-  | f
+  | e
   ; 
 
-def : PL '=' f;
+def : PL '=' e;
 
-f : t '=>' f
+e : f '=>' e 
   | t
   ;
 
-t : PL
-  | '(' f ')'
+t : f
+  ;
+
+f : PL
+  | '(' e ')'
   | '~' f
   | '0'
   | '1'
