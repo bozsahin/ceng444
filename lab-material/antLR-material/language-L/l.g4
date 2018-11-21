@@ -3,6 +3,8 @@
 // antlr3 would complain about this grammar, because it is not LL(1).
 // And, that is the right thing to do.
 // antlr4 gave up on table-driven LL, whether language is LL or not.
+// Think of it this way: If you intended your grammar to be LL, and made
+//    a mistake, how can you find out unless you spot a wrong parse tree?
 // -cem bozsahin
 
 grammar l;
