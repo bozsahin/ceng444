@@ -1,6 +1,8 @@
 // A simple LL(2) language
-// antlr wont complain or warn you about k=2
-// because it tries other alternatives
+// antlr4 wont complain or warn you about k=2.
+// antlr3 would complain about this grammar, because it is not LL(1).
+// And, that is the right thing to do.
+// antlr4 gave up on table-driven LL, whether language is LL or not.
 // -cem bozsahin
 
 grammar l;
