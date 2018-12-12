@@ -10,16 +10,16 @@
 
 <li>Your code generator should take an XPLN program as input, display the IC code for it, and the MIPS code (if IC is different then MIPS assembler).
 
-<li>Use yalalr system for LALR parsing and code generation. If you want to use something else, you're own your own and I can't help you if something goes wrong.
+<li>Use yalalr system for LALR parsing and code generation. If you want to use something else (yacc/lex or bison/flex), you're on your own and I can't help you if something goes wrong.
 
-<li>Yalalr repo contains examples of TAC and ZAC (zero address code) generation for a small fragment of a language similar to XPLN. You can use that to get going.
+<li>Yalalr repo contains examples of TAC (three address code) and ZAC (zero address code) generation for a small fragment of  XPLN-like language. You can use that to get going.
 
-<li>the expr-tac subdir contains very simple TAC templates. You can replace them with real MIPS instructions, or take the result in TAC and add another
+<li>The expr-tac subdir contains very simple TAC templates. You can replace them with real MIPS instructions, or extend the TAC set (for functional call and parameters) and add another
 stage to map them to MIPS. It's up to you.
 
-<li>You may assume now that the input is well-formed since we dealt with that in the first project.
+<li>You may assume now that the input is well-formed since we dealt with that in the first project. No error checking is necessary. (for a course project;)
 
-<li>You should be able to execute the target code for some meaningful programs to check the output.
+<li>You should be able to execute the target code for some meaningful programs to check the output, using spim emulator of MIPS architecture. Spim instruction set is provided in lab-material directory.
 
 <li>For testing, make up some XPLN examples of your own.
 Write a README to help the evaluator check how these examples can be tested independently.
