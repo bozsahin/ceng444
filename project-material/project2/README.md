@@ -12,9 +12,9 @@
 
 <li>Use yalalr system for LALR parsing and code generation. If you want to use something else (yacc/lex or bison/flex), you're on your own and I can't help you if something goes wrong.
 
-<li>Yalalr repo contains examples of TAC (three address code) and ZAC (zero address code) generation for a small fragment of  XPLN-like language. You can use that to get going.
+<li>Yalalr repo contains examples of TAC (three address code) and ZAC (zero address code) generation for a small fragment of  XPLN. You can use that to get going.
 
-<li>The expr-tac subdir contains very simple TAC templates. You can replace them with real MIPS instructions, or extend the TAC set (for functional call and parameters) and add another
+<li>The expr-tac subdir contains very simple TAC templates. You can replace them with real MIPS instructions, or extend the TAC set (for functional call and parameters etc.) and add another
 stage to map them to MIPS. It's up to you.
 
 <li>You may assume now that the input is well-formed since we dealt with that in the first project. No error checking is necessary. (for a course project;)
