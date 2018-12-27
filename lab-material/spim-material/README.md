@@ -8,6 +8,7 @@ Here is the website for SPIM as of 2017 :
 
 This is a good tutorial for understanding <a href="http://logos.cs.uic.edu/366/notes/mips%20quick%20tutorial.htm">MIPS program structure</a>
 
+And this is a comprehensive manual for <a href="http://www.egr.unlv.edu/~ed/MIPStextSMv11.pdf">MIPS using Qtspim</a>.
 
 -cem bozsahin
 
