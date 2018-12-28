@@ -1,0 +1,10 @@
+Script started on Wed Dec 12 11:46:14 2018
+expr-tac> ex-expr.lexer ex-expr.data > tokens
+expr-tac> cat tokens
+(a  |:|  |=|   b |+| c |*| d |-|  |(|  |-|  e |+| f |)|  |/| 5 |;| )
+expr-tac> ex-expr.lexer ex-expr.data2 > tokens2
+expr-tac> cat tokens2
+(b  |:|  |=|    |-| f |/| 5 |;| )
+expr-tac> exit
+
+Script done on Wed Dec 12 11:47:07 2018

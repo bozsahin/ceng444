@@ -1,0 +1,275 @@
+
+> (load "ex-expr")
+
+; file: /Users/bozsahin/myrepos/yalalr/examples/expr-mips-float/ex-expr.lisp
+; in: DEFUN CREATE-DATA-SEGMENT
+;     #'(LAMBDA (KEY VAL)
+;         (IF (EQUAL (SYM-GET-TYPE VAL) 'VAR)
+;             (FORMAT T "~%~A: .float 0.0" (SYM-GET-VALUE VAL))))
+; 
+; caught STYLE-WARNING:
+;   The variable KEY is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+
+T
+> (make-lalrparser)
+; in: DEFUN LALR-PARSER
+;     #'(LAMBDA (ID COLON EQLS E END)
+;         (PROGN (MK-SYM-ENTRY (T-GET-VAL ID)) (TAC-TO-RAC (MK-CODE (APPEND # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable COLON is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable EQLS is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable END is defined but never used.
+
+;     #'(LAMBDA (LP E RP) (IDENTITY E))
+; 
+; caught STYLE-WARNING:
+;   The variable LP is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable RP is defined but never used.
+
+;     #'(LAMBDA (SUB ID)
+;         (LET ((NEWPLACE (NEWTEMP)))
+;           (MK-SYM-ENTRY NEWPLACE)
+;           (MK-SYM-ENTRY (T-GET-VAL ID))
+;           (LIST (MK-PLACE NEWPLACE) (MK-CODE (MK-2AC 'UMINUS NEWPLACE #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable SUB is defined but never used.
+
+;     #'(LAMBDA (TE MULT F)
+;         (LET ((NEWPLACE (NEWTEMP)))
+;           (MK-SYM-ENTRY NEWPLACE)
+;           (LIST (MK-PLACE NEWPLACE) (MK-CODE (APPEND # # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable MULT is defined but never used.
+
+;     #'(LAMBDA (E ADD TE)
+;         (LET ((NEWPLACE (NEWTEMP)))
+;           (MK-SYM-ENTRY NEWPLACE)
+;           (LIST (MK-PLACE NEWPLACE) (MK-CODE (APPEND # # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable ADD is defined but never used.
+
+;     #'(LAMBDA (TE DIV F)
+;         (LET ((NEWPLACE (NEWTEMP)))
+;           (MK-SYM-ENTRY NEWPLACE)
+;           (LIST (MK-PLACE NEWPLACE) (MK-CODE (APPEND # # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable DIV is defined but never used.
+
+;     #'(LAMBDA (E SUB TE)
+;         (LET ((NEWPLACE (NEWTEMP)))
+;           (MK-SYM-ENTRY NEWPLACE)
+;           (LIST (MK-PLACE NEWPLACE) (MK-CODE (APPEND # # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable SUB is defined but never used.
+; 
+; compilation unit finished
+;   caught 10 STYLE-WARNING conditions
+
+LALR-PARSER
+NIL
+NIL
+> (target-code-mips "tokens1")
+
+
+TAC IC code:
+
+
+(3AC MULT #:|t626| C D)
+(3AC ADD #:|t627| B #:|t626|)
+(2AC UMINUS #:|t628| E)
+(3AC ADD #:|t629| #:|t628| F)
+(3AC DIV #:|t630| #:|t629| 5)
+(3AC SUB #:|t631| #:|t627| #:|t630|)
+(2COPY A #:|t631|)
+
+QtSpim target code:
+
+
+
+.data
+
+B: .float 0.0
+C: .float 0.0
+D: .float 0.0
+t626: .float 0.0
+t627: .float 0.0
+t628: .float 0.0
+E: .float 0.0
+F: .float 0.0
+t629: .float 0.0
+t630: .float 0.0
+t631: .float 0.0
+A: .float 0.0
+zzeerroo: .float 0.0
+
+.text
+
+main:
+l.s $f0,C
+l.s $f2,D
+mul.s $f0,$f0,$f2
+s.s $f0,t626
+l.s $f0,B
+l.s $f2,t626
+add.s $f0,$f0,$f2
+s.s $f0,t627
+l.s $f2,E
+#loading dummy zero float to $f0
+l.s $f0,zzeerroo
+sub.s $f0,$f0,$f2
+s.s $f0,t628
+l.s $f0,t628
+l.s $f2,F
+add.s $f0,$f0,$f2
+s.s $f0,t629
+l.s $f0,t629
+#converting to float
+li $t0,5
+mtc1 $t0,$f6
+cvt.s.w $f2,$f6
+#conversion done
+div.s $f0,$f0,$f2
+s.s $f0,t630
+l.s $f0,t627
+l.s $f2,t630
+sub.s $f0,$f0,$f2
+s.s $f0,t631
+l.s $f0,t631
+s.s $f0,A
+#MIPs termination protocol:
+li $v0,10
+syscall
+.end main
+NIL
+> (target-code-mips "tokens2")
+
+
+TAC IC code:
+
+
+(2AC UMINUS #:|t632| F)
+(3AC DIV #:|t633| #:|t632| 5)
+(2COPY B #:|t633|)
+
+QtSpim target code:
+
+
+
+.data
+
+t632: .float 0.0
+F: .float 0.0
+t633: .float 0.0
+B: .float 0.0
+zzeerroo: .float 0.0
+
+.text
+
+main:
+l.s $f2,F
+#loading dummy zero float to $f0
+l.s $f0,zzeerroo
+sub.s $f0,$f0,$f2
+s.s $f0,t632
+l.s $f0,t632
+#converting to float
+li $t0,5
+mtc1 $t0,$f6
+cvt.s.w $f2,$f6
+#conversion done
+div.s $f0,$f0,$f2
+s.s $f0,t633
+l.s $f0,t633
+s.s $f0,B
+#MIPs termination protocol:
+li $v0,10
+syscall
+.end main
+NIL
+> (target-code-mips "tokens3")
+
+
+TAC IC code:
+
+
+(3AC MULT #:|t634| C 78.45)
+(3AC ADD #:|t635| B #:|t634|)
+(2AC UMINUS #:|t636| E)
+(3AC ADD #:|t637| #:|t636| F)
+(3AC DIV #:|t638| #:|t637| 12.5)
+(3AC SUB #:|t639| #:|t635| #:|t638|)
+(2COPY A #:|t639|)
+
+QtSpim target code:
+
+
+
+.data
+
+B: .float 0.0
+C: .float 0.0
+t634: .float 0.0
+t635: .float 0.0
+t636: .float 0.0
+E: .float 0.0
+F: .float 0.0
+t637: .float 0.0
+t638: .float 0.0
+t639: .float 0.0
+A: .float 0.0
+zzeerroo: .float 0.0
+
+.text
+
+main:
+l.s $f0,C
+li.s $f2,78.45
+mul.s $f0,$f0,$f2
+s.s $f0,t634
+l.s $f0,B
+l.s $f2,t634
+add.s $f0,$f0,$f2
+s.s $f0,t635
+l.s $f2,E
+#loading dummy zero float to $f0
+l.s $f0,zzeerroo
+sub.s $f0,$f0,$f2
+s.s $f0,t636
+l.s $f0,t636
+l.s $f2,F
+add.s $f0,$f0,$f2
+s.s $f0,t637
+l.s $f0,t637
+li.s $f2,12.5
+div.s $f0,$f0,$f2
+s.s $f0,t638
+l.s $f0,t635
+l.s $f2,t638
+sub.s $f0,$f0,$f2
+s.s $f0,t639
+l.s $f0,t639
+s.s $f0,A
+#MIPs termination protocol:
+li $v0,10
+syscall
+.end main
+NIL
+> (target-code-mips "tokens4")
+
+"Error before (B + C * 78.45 - ( - E + F ) / 12.5 ; $)"
+> (dribble)
