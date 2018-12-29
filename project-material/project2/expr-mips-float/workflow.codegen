@@ -85,9 +85,30 @@ NIL
 NIL
 > (target-code-mips "tokens1")
 
+Lexical analyzer feed to parser as seen by Lisp reader:
+
+(A : = B + C * D - ( - E + F ) / 5 ;)
+
+Symbol table at IC level:
+
+key         value
+(name blockno)  (type value)
+--------------------
+(B 0) : (VAR B)
+(C 0) : (VAR C)
+(D 0) : (VAR D)
+(t626 0) : (VAR t626)
+(t627 0) : (VAR t627)
+(t628 0) : (VAR t628)
+(E 0) : (VAR E)
+(F 0) : (VAR F)
+(t629 0) : (VAR t629)
+(5 0) : (INT 5)
+(t630 0) : (VAR t630)
+(t631 0) : (VAR t631)
+(A 0) : (VAR A)
 
 TAC IC code:
-
 
 (3AC MULT #:|t626| C D)
 (3AC ADD #:|t627| B #:|t626|)
@@ -98,8 +119,6 @@ TAC IC code:
 (2COPY A #:|t631|)
 
 QtSpim target code:
-
-
 
 .data
 
@@ -158,17 +177,28 @@ syscall
 NIL
 > (target-code-mips "tokens2")
 
+Lexical analyzer feed to parser as seen by Lisp reader:
+
+(B : = - F / 5 ;)
+
+Symbol table at IC level:
+
+key         value
+(name blockno)  (type value)
+--------------------
+(t632 0) : (VAR t632)
+(F 0) : (VAR F)
+(5 0) : (INT 5)
+(t633 0) : (VAR t633)
+(B 0) : (VAR B)
 
 TAC IC code:
-
 
 (2AC UMINUS #:|t632| F)
 (3AC DIV #:|t633| #:|t632| 5)
 (2COPY B #:|t633|)
 
 QtSpim target code:
-
-
 
 .data
 
@@ -203,9 +233,30 @@ syscall
 NIL
 > (target-code-mips "tokens3")
 
+Lexical analyzer feed to parser as seen by Lisp reader:
+
+(A : = B + C * 78.45 - ( - E + F ) / 12.5 ;)
+
+Symbol table at IC level:
+
+key         value
+(name blockno)  (type value)
+--------------------
+(B 0) : (VAR B)
+(C 0) : (VAR C)
+(78.45 0) : (FLOAT 78.45)
+(t634 0) : (VAR t634)
+(t635 0) : (VAR t635)
+(t636 0) : (VAR t636)
+(E 0) : (VAR E)
+(F 0) : (VAR F)
+(t637 0) : (VAR t637)
+(12.5 0) : (FLOAT 12.5)
+(t638 0) : (VAR t638)
+(t639 0) : (VAR t639)
+(A 0) : (VAR A)
 
 TAC IC code:
-
 
 (3AC MULT #:|t634| C 78.45)
 (3AC ADD #:|t635| B #:|t634|)
@@ -216,8 +267,6 @@ TAC IC code:
 (2COPY A #:|t639|)
 
 QtSpim target code:
-
-
 
 .data
 
@@ -271,5 +320,8 @@ syscall
 NIL
 > (target-code-mips "tokens4")
 
+Lexical analyzer feed to parser as seen by Lisp reader:
+
+(A : = = B + C * 78.45 - ( - E + F ) / 12.5 ;)
 "Error before (B + C * 78.45 - ( - E + F ) / 12.5 ; $)"
 > (dribble)

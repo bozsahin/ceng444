@@ -42,6 +42,8 @@
 (defun target-code-mips (input)
   (clrhash *symtab*) ; we need to reset the symbol table for every code gen
   (setf *blockno* 0)
+  (format t "~%Lexical analyzer feed to parser as seen by Lisp reader:~2%~A" 
+	  (with-open-file (s input :direction :input :if-does-not-exist :error)(read s)))
   (target-code input))
 
 (defun mk-sym-entry (name)
@@ -169,9 +171,11 @@
   (create-code-segment code))
 
 (defun tac-to-rac (code)
-  (format t  "~2%TAC IC code:~2%")
+  (format t "~2%Symbol table at IC level:~2%key         value~%(name blockno)  (type value)~%--------------------")
+  (maphash #'(lambda (key val)(format t "~%~A : ~A" key val)) *symtab*)
+  (format t  "~2%TAC IC code:~%")
   (pprint-code code)
-  (format t "~2%QtSpim target code:~2%")
+  (format t "~2%QtSpim target code:")
   (map-to-mips code))
 
 ;; some aux functions  to retrieve amd make feature values for grammar variables
