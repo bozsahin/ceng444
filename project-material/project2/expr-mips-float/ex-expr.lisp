@@ -1,6 +1,8 @@
 ;;;; this example compiles arithmetic expressions and their assignment to 
-;;;; Three address code (TAC) then to register-only ops.
+;;;; Three address code (TAC) then to register-only ops the  to MIPS target code
 ;;;; -cem bozsahin
+
+;; I added a sequencing rule make assignments one after another.
 
 ;; Examples in tac and zac directories generate IC code with IC temporaries.
 
@@ -216,11 +218,21 @@
 
 (defparameter grammar
 '(
-  (start --> ID COLON EQLS e END  #'(lambda (ID COLON EQLS e END) 
+  (start --> stmts                #'(lambda (stmts) 
+					(tac-to-rac (mk-code (var-get-code stmts))))) 
+  (stmts --> stmts s              #'(lambda (stmts s) 
+				      (list (mk-place nil)
+					    (mk-code (append (var-get-code stmts)
+							     (var-get-code s))))))
+  (stmts  --> s                   #'(lambda (s)
+				      (list (mk-place nil)
+					    (mk-code (var-get-code s)))))
+  (s     --> ID COLON EQLS e END  #'(lambda (ID COLON EQLS e END) 
 				      (progn 
 					(mk-sym-entry (t-get-val ID))
-					(tac-to-rac (mk-code (append (var-get-code e) (mk-2copy (t-get-val ID)
-												(var-get-place e))))))))
+					(list (mk-code (append (var-get-code e) (mk-2copy (t-get-val ID)
+												(var-get-place e))))
+					      (mk-place (t-get-val ID))))))
   (e     --> e ADD te         #'(lambda (e ADD te) (let ((newplace (newtemp)))
 						     (mk-sym-entry newplace)
 						     (list (mk-place newplace)

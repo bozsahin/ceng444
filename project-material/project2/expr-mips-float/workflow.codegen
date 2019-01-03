@@ -1,7 +1,7 @@
 
 > (load "ex-expr")
 
-; file: /Users/bozsahin/myrepos/yalalr/examples/expr-mips-float/ex-expr.lisp
+; file: /Users/bozsahin/myrepos/ceng444/project-material/project2/expr-mips-float/ex-expr.lisp
 ; in: DEFUN CREATE-DATA-SEGMENT
 ;     #'(LAMBDA (KEY VAL)
 ;         (IF (EQUAL (SYM-GET-TYPE VAL) 'VAR)
@@ -17,7 +17,9 @@ T
 > (make-lalrparser)
 ; in: DEFUN LALR-PARSER
 ;     #'(LAMBDA (ID COLON EQLS E END)
-;         (PROGN (MK-SYM-ENTRY (T-GET-VAL ID)) (TAC-TO-RAC (MK-CODE (APPEND # #)))))
+;         (PROGN
+;          (MK-SYM-ENTRY (T-GET-VAL ID))
+;          (LIST (MK-CODE (APPEND # #)) (MK-PLACE (T-GET-VAL ID)))))
 ; 
 ; caught STYLE-WARNING:
 ;   The variable COLON is defined but never used.
@@ -83,40 +85,50 @@ T
 LALR-PARSER
 NIL
 NIL
-> (target-code-mips "tokens1")
+> (target-code-mips "tokens1n" t)
 
 Lexical analyzer feed to parser as seen by Lisp reader:
 
-(A : = B + C * D - ( - E + F ) / 5 ;)
+(B : = 5.0 ; C : = 2.0 ; D : = 10.0 ; E : = 10.0 ; F : = 20.0 ; A : = B + C * D
+ - ( - E + F ) / 5 ;)
 
 Symbol table at IC level:
 
 key         value
 (name blockno)  (type value)
 --------------------
+(5.0 0) : (FLOAT 5.0)
 (B 0) : (VAR B)
+(2.0 0) : (FLOAT 2.0)
 (C 0) : (VAR C)
+(10.0 0) : (FLOAT 10.0)
 (D 0) : (VAR D)
-(t626 0) : (VAR t626)
-(t627 0) : (VAR t627)
-(t628 0) : (VAR t628)
 (E 0) : (VAR E)
+(20.0 0) : (FLOAT 20.0)
 (F 0) : (VAR F)
-(t629 0) : (VAR t629)
+(t362 0) : (VAR t362)
+(t363 0) : (VAR t363)
+(t364 0) : (VAR t364)
+(t365 0) : (VAR t365)
 (5 0) : (INT 5)
-(t630 0) : (VAR t630)
-(t631 0) : (VAR t631)
+(t366 0) : (VAR t366)
+(t367 0) : (VAR t367)
 (A 0) : (VAR A)
 
 TAC IC code:
 
-(3AC MULT #:|t626| C D)
-(3AC ADD #:|t627| B #:|t626|)
-(2AC UMINUS #:|t628| E)
-(3AC ADD #:|t629| #:|t628| F)
-(3AC DIV #:|t630| #:|t629| 5)
-(3AC SUB #:|t631| #:|t627| #:|t630|)
-(2COPY A #:|t631|)
+(2COPY B 5.0)
+(2COPY C 2.0)
+(2COPY D 10.0)
+(2COPY E 10.0)
+(2COPY F 20.0)
+(3AC MULT #:|t362| C D)
+(3AC ADD #:|t363| B #:|t362|)
+(2AC UMINUS #:|t364| E)
+(3AC ADD #:|t365| #:|t364| F)
+(3AC DIV #:|t366| #:|t365| 5)
+(3AC SUB #:|t367| #:|t363| #:|t366|)
+(2COPY A #:|t367|)
 
 QtSpim target code:
 
@@ -125,203 +137,64 @@ QtSpim target code:
 B: .float 0.0
 C: .float 0.0
 D: .float 0.0
-t626: .float 0.0
-t627: .float 0.0
-t628: .float 0.0
 E: .float 0.0
 F: .float 0.0
-t629: .float 0.0
-t630: .float 0.0
-t631: .float 0.0
+t362: .float 0.0
+t363: .float 0.0
+t364: .float 0.0
+t365: .float 0.0
+t366: .float 0.0
+t367: .float 0.0
 A: .float 0.0
 zzeerroo: .float 0.0
 
 .text
 
 main:
+li.s $f0,5.0
+s.s $f0,B
+li.s $f0,2.0
+s.s $f0,C
+li.s $f0,10.0
+s.s $f0,D
+li.s $f0,10.0
+s.s $f0,E
+li.s $f0,20.0
+s.s $f0,F
 l.s $f0,C
 l.s $f2,D
 mul.s $f0,$f0,$f2
-s.s $f0,t626
+s.s $f0,t362
 l.s $f0,B
-l.s $f2,t626
+l.s $f2,t362
 add.s $f0,$f0,$f2
-s.s $f0,t627
+s.s $f0,t363
 l.s $f2,E
 #loading dummy zero float to $f0
 l.s $f0,zzeerroo
 sub.s $f0,$f0,$f2
-s.s $f0,t628
-l.s $f0,t628
+s.s $f0,t364
+l.s $f0,t364
 l.s $f2,F
 add.s $f0,$f0,$f2
-s.s $f0,t629
-l.s $f0,t629
+s.s $f0,t365
+l.s $f0,t365
 #converting to float
 li $t0,5
 mtc1 $t0,$f6
 cvt.s.w $f2,$f6
 #conversion done
 div.s $f0,$f0,$f2
-s.s $f0,t630
-l.s $f0,t627
-l.s $f2,t630
+s.s $f0,t366
+l.s $f0,t363
+l.s $f2,t366
 sub.s $f0,$f0,$f2
-s.s $f0,t631
-l.s $f0,t631
+s.s $f0,t367
+l.s $f0,t367
 s.s $f0,A
 #MIPs termination protocol:
 li $v0,10
 syscall
 .end main
 NIL
-> (target-code-mips "tokens2")
-
-Lexical analyzer feed to parser as seen by Lisp reader:
-
-(B : = - F / 5 ;)
-
-Symbol table at IC level:
-
-key         value
-(name blockno)  (type value)
---------------------
-(t632 0) : (VAR t632)
-(F 0) : (VAR F)
-(5 0) : (INT 5)
-(t633 0) : (VAR t633)
-(B 0) : (VAR B)
-
-TAC IC code:
-
-(2AC UMINUS #:|t632| F)
-(3AC DIV #:|t633| #:|t632| 5)
-(2COPY B #:|t633|)
-
-QtSpim target code:
-
-.data
-
-t632: .float 0.0
-F: .float 0.0
-t633: .float 0.0
-B: .float 0.0
-zzeerroo: .float 0.0
-
-.text
-
-main:
-l.s $f2,F
-#loading dummy zero float to $f0
-l.s $f0,zzeerroo
-sub.s $f0,$f0,$f2
-s.s $f0,t632
-l.s $f0,t632
-#converting to float
-li $t0,5
-mtc1 $t0,$f6
-cvt.s.w $f2,$f6
-#conversion done
-div.s $f0,$f0,$f2
-s.s $f0,t633
-l.s $f0,t633
-s.s $f0,B
-#MIPs termination protocol:
-li $v0,10
-syscall
-.end main
-NIL
-> (target-code-mips "tokens3")
-
-Lexical analyzer feed to parser as seen by Lisp reader:
-
-(A : = B + C * 78.45 - ( - E + F ) / 12.5 ;)
-
-Symbol table at IC level:
-
-key         value
-(name blockno)  (type value)
---------------------
-(B 0) : (VAR B)
-(C 0) : (VAR C)
-(78.45 0) : (FLOAT 78.45)
-(t634 0) : (VAR t634)
-(t635 0) : (VAR t635)
-(t636 0) : (VAR t636)
-(E 0) : (VAR E)
-(F 0) : (VAR F)
-(t637 0) : (VAR t637)
-(12.5 0) : (FLOAT 12.5)
-(t638 0) : (VAR t638)
-(t639 0) : (VAR t639)
-(A 0) : (VAR A)
-
-TAC IC code:
-
-(3AC MULT #:|t634| C 78.45)
-(3AC ADD #:|t635| B #:|t634|)
-(2AC UMINUS #:|t636| E)
-(3AC ADD #:|t637| #:|t636| F)
-(3AC DIV #:|t638| #:|t637| 12.5)
-(3AC SUB #:|t639| #:|t635| #:|t638|)
-(2COPY A #:|t639|)
-
-QtSpim target code:
-
-.data
-
-B: .float 0.0
-C: .float 0.0
-t634: .float 0.0
-t635: .float 0.0
-t636: .float 0.0
-E: .float 0.0
-F: .float 0.0
-t637: .float 0.0
-t638: .float 0.0
-t639: .float 0.0
-A: .float 0.0
-zzeerroo: .float 0.0
-
-.text
-
-main:
-l.s $f0,C
-li.s $f2,78.45
-mul.s $f0,$f0,$f2
-s.s $f0,t634
-l.s $f0,B
-l.s $f2,t634
-add.s $f0,$f0,$f2
-s.s $f0,t635
-l.s $f2,E
-#loading dummy zero float to $f0
-l.s $f0,zzeerroo
-sub.s $f0,$f0,$f2
-s.s $f0,t636
-l.s $f0,t636
-l.s $f2,F
-add.s $f0,$f0,$f2
-s.s $f0,t637
-l.s $f0,t637
-li.s $f2,12.5
-div.s $f0,$f0,$f2
-s.s $f0,t638
-l.s $f0,t635
-l.s $f2,t638
-sub.s $f0,$f0,$f2
-s.s $f0,t639
-l.s $f0,t639
-s.s $f0,A
-#MIPs termination protocol:
-li $v0,10
-syscall
-.end main
-NIL
-> (target-code-mips "tokens4")
-
-Lexical analyzer feed to parser as seen by Lisp reader:
-
-(A : = = B + C * 78.45 - ( - E + F ) / 12.5 ;)
-"Error before (B + C * 78.45 - ( - E + F ) / 12.5 ; $)"
 > (dribble)
