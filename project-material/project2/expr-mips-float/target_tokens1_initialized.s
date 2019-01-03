@@ -2,14 +2,14 @@
 
 .data
 
-B: .float 0.0
-C: .float 0.0
-D: .float 0.0
+B: .float 5.0
+C: .float 2.0
+D: .float 10.0
 t626: .float 0.0
 t627: .float 0.0
 t628: .float 0.0
-E: .float 0.0
-F: .float 0.0
+E: .float 10.0
+F: .float 20.0
 t629: .float 0.0
 t630: .float 0.0
 t631: .float 0.0

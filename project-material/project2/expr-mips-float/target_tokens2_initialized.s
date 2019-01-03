@@ -1,7 +1,9 @@
+
+
 .data
 
 t632: .float 0.0
-F: .float 0.0
+F: .float 12.0
 t633: .float 0.0
 B: .float 0.0
 zzeerroo: .float 0.0
@@ -28,3 +30,4 @@ s.s $f0,B
 li $v0,10
 syscall
 .end main
+
