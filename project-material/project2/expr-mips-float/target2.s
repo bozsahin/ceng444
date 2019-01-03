@@ -1,7 +1,7 @@
 .data
 
 t632: .float 0.0
-F: .float 0.0
+F: .float 10.0
 t633: .float 0.0
 B: .float 0.0
 zzeerroo: .float 0.0
