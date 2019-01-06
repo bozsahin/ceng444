@@ -34,7 +34,7 @@ and it's great for future reference if you are into this sort of CS-ey things.
 <li> Parsing (syntactic analysis) (3)
 <li> Intermediate code (1)
 <li> Virtual machines (1)
-<li> Code generation (syntax-directed translation) (1)
+<li> Code generation (syntax-directed derivation/description---SDD) (1)
 <li> Scope handling and run-time (1)
 <li> A preview of compiling functional languages (2)
 </ol>
