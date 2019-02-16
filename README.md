@@ -66,6 +66,6 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
   <br>You will be a proud owner of 4 bottles of a yerli ve milli soft drink,
   <br>with a certificate in a low-budget print, namely my handwriting.
   <br> And, since you asked, we can't afford 444 bottles; or 44, in fact.
-<li> Recipient of the prize: <a href="https://github.com/ahmetgulden/xpln-compiler">for MIPS code gen</a> by Ahmet Gulden
-<li> Recipient of the prize: <a href="https://github.com/bozbalci/explain">for LLVM code gen</a> by Berk Ozbalci
+<li> Recipient of the prize: Ahmet Gulden <a href="https://github.com/ahmetgulden/xpln-compiler">for MIPS code gen</a> 
+<li> Recipient of the prize: Berk Ozbalci <a href="https://github.com/bozbalci/explain">for LLVM code gen</a> 
 </ol>
