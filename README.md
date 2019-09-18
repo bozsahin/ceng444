@@ -3,13 +3,13 @@ Middle East Technical University CENG introductory compiler course
 
 This is the website of the course when I teach it. 
 
-<b>Term</b>: Fall 2018
+<b>Term</b>: Fall 2019
 
-<b>Instructor</b>: Cem Bozsahin.  TA: TBA
+<b>Instructor</b>: Cem Bozsahin.  TA: none.
 
 <b>Office hours</b>: Open door except lecture days (i.e. except TTh this term; my office is B-209 at Informatics, tel: 7758)
 
-<b>Course hours</b>: T/8.40-9.30, Th/15.40-17.30 at BMB-5 (CENG building)
+<b>Course hours</b>: T/8.40/9.40, Th/8.40/9.40 at BMB-2 (CENG building)
 
 <b>Textbook</b>:
 Engineering a compiler</b>, by Keith Cooper and Linda Torczon, 2nd ed,
