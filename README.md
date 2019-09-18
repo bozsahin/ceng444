@@ -56,7 +56,7 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
 
 <b>Grading</b>:
 <ol>
- <li> Mid-term exam: %25 (<b> November 15, 2018, in class</b>)
+ <li> Mid-term exam: %25 (<b> TBA, around 8th week, in class</b>)
 <li> mini-project 1 (LL parsing and abstract syntax trees): %20
 <li> mini-project 2 (LALR parsing and code generation): %35
 <li> Final exam: %20
@@ -68,6 +68,4 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
   <br>You will be a proud owner of 4 bottles of a yerli ve milli soft drink,
   <br>with a certificate in a low-budget print, namely my handwriting.
   <br> And, since you asked, we can't afford 444 bottles; or 44, in fact.
-<li> Recipient of the prize: Ahmet Gulden <a href="https://github.com/ahmetgulden/xpln-compiler">for MIPS code gen</a> 
-<li> Recipient of the prize: Berk Ozbalci <a href="https://github.com/bozbalci/explain">for LLVM code gen</a> 
 </ol>
