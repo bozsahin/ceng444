@@ -10,6 +10,7 @@ This is the website of the course when I teach it.
 <b>Office hours</b>: Open door except lecture days (i.e. except TTh this term; my office is B-209 at Informatics, tel: 7758)
 
 <b>Course hours</b>: T/8.40/9.40, Th/8.40/9.40 at BMB-2 (CENG building)
+<br> We will actually do 75 minutes without break each day. The course is not 200 minutes!
 
 <b>Textbook</b>:
 Engineering a compiler</b>, by Keith Cooper and Linda Torczon, 2nd ed,
