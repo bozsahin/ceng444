@@ -48,7 +48,7 @@ and it's great for future reference if you are into this sort of CS-ey things.
 <p>
 There is an interface to LALR parser written by me, called <a href="https://github.com/bozsahin/yalalr">yalalr</a>.
  
-<p>In-class labs introduce antLR, yalalr, MIPS/spim and  a bit of Lisp.
+<p>In-class labs introduce antLR, yalalr, MIPS/spim, RISC-V, and  a bit of Lisp.
 
 <p> The second project includes code generation and execution, using
 MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net/">spim</a>.
