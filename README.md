@@ -56,7 +56,7 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
 
 <b>Grading</b>:
 <ol>
- <li> Mid-term exam: %25 (<b> TBA, around 8th week, in class</b>)
+ <li> Mid-term exam: %25 (<b> 26.11.2019, in class</b>)
 <li> mini-project 1 (LL parsing and abstract syntax trees): %20
 <li> mini-project 2 (LALR parsing and code generation): %35
 <li> Final exam: %20
