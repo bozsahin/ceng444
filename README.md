@@ -42,8 +42,9 @@ and it's great for future reference if you are into this sort of CS-ey things.
 
 <b>Course conduct</b>: 11 weeks of lecture, 2 weeks of in-class labs; 1 week in-class exam; 2 programming projects; no extra homework.
 
-<p>We will use 3 tools for compiler design, (1) <a href="https://github.com/antlr/antlr4">antLR</a>
- for LL, (2) LALR parser of Mark Johnson for LR, and (3) <code>spim</code>  for code generation.
+<p>We will use 4 tools for compiler design, (1) <a href="https://github.com/antlr/antlr4">antLR</a>
+ for LL, (2) LALR parser of Mark Johnson for LR, (3) <code>spim</code>  for MIPS code generation, or 
+ (4) <code>Spike</code> for RISC-V code generation.
  
 <p>
 There is an interface to LALR parser written by me, called <a href="https://github.com/bozsahin/yalalr">yalalr</a>.
@@ -52,7 +53,7 @@ There is an interface to LALR parser written by me, called <a href="https://gith
 
 <p> The second project includes code generation and execution, using
 MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net/">spim</a>.
- We also look at a public-domain RISC, RISC-V.
+ We also look at a public-domain RISC, RISC-V, using <a href="https://github.com/riscv/riscv-isa-sim">Spike</a>.
 
 <b>Grading</b>:
 <ol>
