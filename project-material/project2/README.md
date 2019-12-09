@@ -7,8 +7,8 @@
 <p>Test your sample V code with a native machine if you have one, or use on of the great simulators such
 as QtSpim for MIPS or Spike for RISC-V. 
 
-<p>These emulators are in fact better, because it allows you to debug your code generator by showing
-the ``machine state'' all the time, and during updates. 
+<p>These emulators are in fact better, because they allow you to debug your code generator by showing
+the ``machine state'' all the time, and during register updates. 
 
 <p>For this phase, you may assume that all input is well-formed syntactically and semantically, that is, it is executable
 with a meaningful response.
