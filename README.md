@@ -72,8 +72,10 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
 </ol>
 
 <b>2019-2020 Gazozuna Kompaylir odulleri:</b>
-Yunus Can Cakir: bison/flex -> LLVM
-Emre Gullu: yalalr -> MIPS
-Ozan Akin : rust -> x64
+<ul>
+<li>Yunus Can Cakir: bison/flex -> LLVM
+<li>Emre Gullu: yalalr -> MIPS
+<li>Ozan Akin : rust -> x64
+</ul>
 
 tebrix!
