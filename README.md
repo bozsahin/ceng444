@@ -70,3 +70,10 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
   <br>with a certificate in a low-budget print, namely my handwriting.
   <br> And, since you asked, we can't afford 444 bottles; or 44, in fact.
 </ol>
+
+<b>2019-2020 Gazozuna Kompaylir odulleri:</b>
+Yunus Can Cakir: bison/flex -> LLVM
+Emre Gullu: yalalr -> MIPS
+Ozan Akin : rust -> x64
+
+tebrix!
