@@ -64,7 +64,7 @@ MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net
  <li><b>Gazozuna Kompaylır Ödülü</b> : priceless!!
   <br> Highest honour we give out to best successful completion of the second project.
   <br> It is, ehm, <a href="https://www.linkedin.com/in/merihakar">officially recognized</a>, 
-  <br> and anyone reading your CV at least in Turkey would know what you achieved.
+  <br> and those who are in the know reading your CV at least in Turkey would know what you achieved.
   <br>Usually handed by the end of first spring term after completion, with a ceremony!
   <br>You will be a proud owner of 4 bottles of a yerli ve milli soft drink,
   <br>with a certificate in a low-budget print, namely my handwriting.
