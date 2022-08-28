@@ -12,9 +12,10 @@ This is the website of the course when I teach it.
 <b>Course hours</b>: TBA (CENG building)
 <br> We will actually do 75 minutes without break each day. The course is not 200 minutes!
 
-<b>Textbook</b>: Compilers: Principles, Techniques and Tools. Aho, Lam, Sethi, Ullman (2007). 2nd Edition of the Dragon Book.
+<b>Textbook</b>: Compilers: Principles, Techniques and Tools. Aho, Lam, Sethi, Ullman (2007). Addison-Wesley/Pearson.
+2nd Edition of the Dragon Book.
 
-This is a classic in CS.
+The first edition was a classic in CS, and 2nd edition adds more to the legend.
 
 
 <b>Catalog description</b>: Formal description and classification of programming languages. Syntactic specification. The parsing problem. Top-down and bottom-up parsing. Attaching semantics to syntax. Translator writing systems. Translator writing case study.
