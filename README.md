@@ -3,21 +3,19 @@ Middle East Technical University CENG introductory compiler course
 
 This is the website of the course when I teach it. 
 
-<b>Term</b>: Fall 2019
+<b>Term</b>: Spring 2022
 
-<b>Instructor</b>: Cem Bozsahin.  TA: none.
+<b>Instructor</b>: Cem Bozsahin (Cogsci).  TA: Cem Onem (CEng).
 
-<b>Office hours</b>: Open door except lecture days (i.e. except TTh this term; my office is B-209 at Informatics, tel: 7758)
+<b>Office hours</b>: Open door except lecture days (my office is B-209 at Informatics, tel: 7758)
 
-<b>Course hours</b>: T/8.40/9.40, Th/8.40/9.40 at BMB-2 (CENG building)
+<b>Course hours</b>: TBA (CENG building)
 <br> We will actually do 75 minutes without break each day. The course is not 200 minutes!
 
-<b>Textbook</b>:
-Engineering a compiler</b>, by Keith Cooper and Linda Torczon, 2nd ed,
-Morgan Kaufmann, 2012.
+<b>Textbook</b>: Compilers: Principles, Techniques and Tools. Aho, Lam, Sethi, Ullman (2007). 2nd Edition of the Dragon Book.
 
-This is a professional reference, used throughout the world. We will cover a fragment of it,
-and it's great for future reference if you are into this sort of CS-ey things.
+This is a classic in CS.
+
 
 <b>Catalog description</b>: Formal description and classification of programming languages. Syntactic specification. The parsing problem. Top-down and bottom-up parsing. Attaching semantics to syntax. Translator writing systems. Translator writing case study.
 
@@ -42,24 +40,20 @@ and it's great for future reference if you are into this sort of CS-ey things.
 
 <b>Course conduct</b>: 11 weeks of lecture, 2 weeks of in-class labs; 1 week in-class exam; 2 programming projects; no extra homework.
 
-<p>We will use 4 tools for compiler design, (1) <a href="https://github.com/antlr/antlr4">antLR</a>
- for LL, (2) LALR parser of Mark Johnson for LR, (3) <code>spim</code>  for MIPS code generation, or 
- (4) <code>Spike</code> for RISC-V code generation.
- 
-<p>
-There is an interface to LALR parser written by me, called <a href="https://github.com/bozsahin/yalalr">yalalr</a>.
- 
-<p>In-class labs introduce antLR, yalalr, MIPS/spim, RISC-V, and  a bit of Lisp.
+<p>We will use TWO tools for compiler design: (1) <code>sly.py</code> (which is lex and yacc in python)
+ (2) <code>Spike</code> for RISC-V code generation.
 
-<p> The second project includes code generation and execution, using
-MIPs architecture simulator called <a href="http://spimsimulator.sourceforge.net/">spim</a>.
- We also look at a public-domain RISC, RISC-V, using <a href="https://github.com/riscv/riscv-isa-sim">Spike</a>.
+ 
+<p>In-class labs introduce sly.py and RISC-V.
+
+<p> The second project includes code generation and execution, in
+RISC-V, using <a href="https://github.com/riscv/riscv-isa-sim">Spike</a>.
 
 <b>Grading</b>:
 <ol>
- <li> Mid-term exam: %25 (<b> 26.11.2019, in class</b>)
-<li> mini-project 1 (LL parsing and abstract syntax trees): %20
-<li> mini-project 2 (LALR parsing and code generation): %35
+ <li> Mid-term exam: %25 (<b> in class</b>)
+<li> mini-project 1 (lex analysis and parsing into abstract syntax trees): %20
+<li> mini-project 2 (code generation and execution): %35
 <li> Final exam: %20
  <li><b>Gazozuna Kompaylır Ödülü</b> : priceless!!
   <br> Highest honour we give out to best successful completion of the second project.
