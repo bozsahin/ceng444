@@ -3,7 +3,7 @@ Middle East Technical University CENG introductory compiler course
 
 This is the website of the course when I teach it. 
 
-<b>Term</b>: Spring 2022
+<b>Term</b>: Fall 2022 (for the academic year 2022-2023)
 
 <b>Instructor</b>: Cem Bozsahin (Cogsci).  TA: Cem Onem (CEng).
 
