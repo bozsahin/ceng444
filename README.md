@@ -45,7 +45,7 @@ The first edition was a classic in CS, and 2nd edition adds more to the legend.
 
 <b>Course conduct</b>: 11 weeks of lecture, 2 weeks of in-class labs; 1 week in-class exam; 2 programming projects; no extra homework.
 
-<p>We will use TWO tools for compiler design: (1) <code>sly.py</code> (which is lex and yacc in python; see the bottom of this page), (2) <code>Spike</code> for RISC-V code generation.
+<p>We will use TWO tools for compiler design: (1) <code>sly.py</code> (which is lex and yacc in python; see the bottom of this page), (2) <a href="https://github.com/riscv/riscv-isa-sim">Spike</a>  for RISC-V code generation.
 
  
 <p> In-class labs introduce sly.py and RISC-V.
@@ -55,7 +55,7 @@ The first edition was a classic in CS, and 2nd edition adds more to the legend.
 <p> The first part of the project uses sly to do lexical analysis and parsing into abstract syntax trees.
 
 <p> The second part of the project includes code generation and execution, in
-RISC-V, using <a href="https://github.com/riscv/riscv-isa-sim">Spike</a>.
+RISC-V, using <code>Spike</code>.
 
 <b>Grading</b>:
 <ol>
