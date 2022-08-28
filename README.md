@@ -51,8 +51,8 @@ RISC-V, using <a href="https://github.com/riscv/riscv-isa-sim">Spike</a>.
 
 <b>Grading</b>:
 <ol>
- <li> Mid-term exam: %25 (<b> in class</b>)
-<li> mini-project 1 (lex analysis and parsing into abstract syntax trees): %20
+ <li> Mid-term exam: %20 (<b> in class</b>)
+<li> mini-project 1 (lex analysis and parsing into abstract syntax trees): %25
 <li> mini-project 2 (code generation and execution): %35
 <li> Final exam: %20
  <li><b>Gazozuna Kompaylır Ödülü</b> : priceless!!
