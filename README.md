@@ -78,3 +78,15 @@ RISC-V, using <a href="https://github.com/riscv/riscv-isa-sim">Spike</a>.
 </ul>
 
 tebrix!
+
+Python GOODIES:
+
+- Default python interpreters are SLOW. You may want to try <code><a href="https://pypy.org">pypy</a></code>.
+ 
+If you do make the switch, change <code>pip install sly</code> for sly install to
+to <code>pip_pypy3 install sly</code>
+
+
+  And when you want to call <code>python</code>, change it to <code>pypy3</code> call.
+
+-Command recall: In lunix/macosphere, you can recall earlier commands by installing <code>rlwrap</code>.
