@@ -48,9 +48,13 @@ The first edition was a classic in CS, and 2nd edition adds more to the legend.
 <p>We will use TWO tools for compiler design: (1) <code>sly.py</code> (which is lex and yacc in python; see the bottom of this page), (2) <code>Spike</code> for RISC-V code generation.
 
  
-<p>In-class labs introduce sly.py and RISC-V.
+<p> In-class labs introduce sly.py and RISC-V.
+ 
+<p> We will give you a newly designed PL. You will write a compiler for it.
+ 
+<p> The first part of the project uses sly to do lexical analysis and parsing into abstract syntax trees.
 
-<p> The second project includes code generation and execution, in
+<p> The second part of the project includes code generation and execution, in
 RISC-V, using <a href="https://github.com/riscv/riscv-isa-sim">Spike</a>.
 
 <b>Grading</b>:
