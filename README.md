@@ -24,7 +24,7 @@ The first edition was a classic in CS, and 2nd edition adds more to the legend.
 
 <b>Course prerequisite</b>: Officially, none, according to METU catalog. Unofficially, you need to feel comfortable with
  programming, data structures, and formal languages. 3rd-year standing in CS, or CENG280 in the bag, or
- COGS501 *and* COGS502 will suffice. *Informatics Students*: Please contact me DURING ADD/DROP so that I can
+ COGS501 *and* COGS502 will suffice. *Informatics Students*: Please contact me DURING REGISTRATION so that I can
  tell you whether you are eligible for the course, and to inform CENG department in time for them to open
  a quota for you.
 
