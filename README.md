@@ -7,9 +7,10 @@ This is the website of the course when I teach it.
 
 <b>Instructor</b>: Cem Bozsahin (Cogsci).  TA: Cem Onem (CEng).
 
-<b>Office hours</b>: Open door except lecture days (my office is B-209 at Informatics, tel: 7758)
+<b>Office hours</b>: Open door except lecture days TWTh (my office is B-209 at Informatics, tel: 7758)
 
-<b>Course hours</b>: W14.40-15.55, Th15.40-16.55 Room BMB-2 (CENG building)
+<b>Course hours</b>: W 14.40-15.55, Th 15.40-16.55 Room BMB-2 (CENG building). We do 75 minutes
+without break each day.
 
 <b>Textbook</b>: Compilers: Principles, Techniques and Tools. Aho, Lam, Sethi, Ullman (2007). Addison-Wesley/Pearson.
 2nd Edition of the Dragon Book.
