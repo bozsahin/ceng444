@@ -9,8 +9,7 @@ This is the website of the course when I teach it.
 
 <b>Office hours</b>: Open door except lecture days (my office is B-209 at Informatics, tel: 7758)
 
-<b>Course hours</b>: TBA (CENG building)
-<br> We will actually do 75 minutes without break each day. The course is not 200 minutes!
+<b>Course hours</b>: W14.40-15.55, Th15.40-16.55 Room BMB-2 (CENG building)
 
 <b>Textbook</b>: Compilers: Principles, Techniques and Tools. Aho, Lam, Sethi, Ullman (2007). Addison-Wesley/Pearson.
 2nd Edition of the Dragon Book.
