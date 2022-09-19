@@ -63,7 +63,8 @@ The first edition was a classic in CS, and 2nd edition adds more to the legend.
 <p> The first part of the project uses sly to do lexical analysis and parsing into abstract syntax trees.
 
 <p> The second part of the project includes code generation and execution, in
-RISC-V, using <code>Spike</code>.
+RISC-V, using <code>Spike</code>. (We also accept LLVM, MIPS, x86 code generation; however, these
+ you have to do at your own risk.)
 
 <b>Grading</b>:
 <ol>
