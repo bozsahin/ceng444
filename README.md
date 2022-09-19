@@ -9,8 +9,11 @@ This is the website of the course when I teach it.
 
 <b>Office hours</b>: Open door except lecture days TWTh (my office is B-209 at Informatics, tel: 7758)
 
-<b>Course hours</b>: W 14.40-15.55, Th 15.40-16.55 Room BMB-2 (CENG building). We do 75 minutes
-without break each day.
+<b>Course hours</b>: W 14.40-15.55, Th 15.40-16.55 Room BMB-2 (CENG building). 
+
+We will probably do 75 minutes without break each day. If there is course clash, we can try
+2+1 or 1+2 on WTh. We'll discuss this in FIRST class. (So please attend first class, whether you are
+registered or not.)
 
 <b>Textbook</b>: Compilers: Principles, Techniques and Tools. Aho, Lam, Sethi, Ullman (2007). Addison-Wesley/Pearson.
 2nd Edition of the Dragon Book.
