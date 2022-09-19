@@ -13,10 +13,12 @@ This is the website of the course when I teach it.
 
 The course is 3 hours, not 4.
 
-We will probably do 75 minutes without break each day. If there is course clash, we can try
+We will probably do 75 minutes without break each day, something like W14.40-15.55 Th15.40-16.55. 
+
+If there is course clash, we can try
 2+1 or 1+2 on WTh. We'll discuss this in FIRST class. 
 
-(So please attend first class, whether you are registered or not.)
+**(So please attend first class, whether you are registered or not.)
 
 <b>Textbook</b>: Compilers: Principles, Techniques and Tools. Aho, Lam, Sethi, Ullman (2007). Addison-Wesley/Pearson.
 2nd Edition of the Dragon Book.
