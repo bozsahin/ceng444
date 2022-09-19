@@ -64,7 +64,7 @@ The first edition was a classic in CS, and 2nd edition adds more to the legend.
 
 <p> The second part of the project includes code generation and execution, in
 RISC-V, using <code>Spike</code>. (We also accept LLVM, MIPS, x86 code generation; however, these
- you have to do at your own risk.)
+ you have to do without expecting too much help from us.)
 
 <b>Grading</b>:
 <ol>
