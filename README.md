@@ -9,9 +9,9 @@ This is the website of the course when I teach it.
 
 <b>Office hours</b>: Open door except lecture days TWTh (my office is B-209 at Informatics, tel: 7758)
 
-<b>Course hours</b>: W 14.40/15.40, Th 15.40/16.40 Room BMB-2 (CENG building). 
+<b>Course hours</b>: W 14.40-16.30, Th 15.40-17.30 Room BMB-2 (CENG building). 
 
-The course is 3 hours, not 4.
+The course is 3 lecture hours,  not 4. I asked for two two-hour slots for flexibility.
 
 We will probably do 75 minutes without break each day, something like W14.40-15.55 Th15.40-16.55. 
 
