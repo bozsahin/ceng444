@@ -18,7 +18,7 @@ We will probably do 75 minutes without break each day, something like W14.40-15.
 If there is course clash, we can try
 2+1 or 1+2 on WTh. We'll discuss this in FIRST class. 
 
-**(So please attend first class, whether you are registered or not.)
+**(So please attend first class, whether you are registered or not.)**
 
 <b>Textbook</b>: Compilers: Principles, Techniques and Tools. Aho, Lam, Sethi, Ullman (2007). Addison-Wesley/Pearson.
 2nd Edition of the Dragon Book.
