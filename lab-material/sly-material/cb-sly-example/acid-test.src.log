@@ -1,0 +1,13 @@
+file: acid-test.src
+The grammar file compiled OK.
+Grammarians:
+   Please do  NOT use <index, parameter> at
+     the end of elements. It is used for model training.
+   Use plain grammar entries instead.
+Modelers:
+   Please DO NOT change that information manually.
+   When you add new entries to an already-indexed grammar,
+     put ALL OF THEM at the END of the grammar file.
+   In model updates, make new entries WITHOUT extra information.
+
+
