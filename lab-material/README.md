@@ -1,4 +1,6 @@
-antLR, LALR, MIPS, SPIM, Lisp material go here.
+sly, antLR, LALR, MIPS, SPIM, Lisp material go here.
+
+sly is python's lex and yacc. 
 
 antLR is easier from its complete jar file. Build can be tricky (it was for me).
 
