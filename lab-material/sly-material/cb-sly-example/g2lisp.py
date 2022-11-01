@@ -210,7 +210,7 @@ class MGLexer(Lexer):  # Token types of monadic grammar specifications
         self.index += 1
 
 class MGParser(Parser):       # the syntax of MG entries 
-    #debugfile = 'lalr.log'
+    debugfile = 'parser.log'
     tokens = MGLexer.tokens
     global _keys, _indexed, _grammar, _info
 
