@@ -2,12 +2,11 @@ YOU NEED:
 
 - python3.8 or above
 - pip3.8 or above
+- You need to pip-install sly.py first. 
 
-To use this code, do <code>python main.py</code>
+To use this code, do <code>(rlwrap) python main.py</code>
 
 And follow the instructions there.
-
-You need to pip install sly.py first. 
 
 In the folder there are source files for a natural language grammar.
 
