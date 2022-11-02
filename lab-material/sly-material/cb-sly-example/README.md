@@ -1,8 +1,13 @@
-To use this code, do <code>python g2lisp.py</code>
+YOU NEED:
+
+- python3.8 or above
+- pip3.8 or above
+
+To use this code, do <code>python main.py</code>
 
 And follow the instructions there.
 
-You need to pip install sly.py first. And you need python3.8 or newer.
+You need to pip install sly.py first. 
 
 In the folder there are source files for a natural language grammar.
 
@@ -10,11 +15,13 @@ This grammar is parsed into IC code in the form of a python dict for source's AS
 
 Once parsed, the current IC code can generate target code in the form of Common Lisp expressions.
 
-In g2lisp.py code you can see a fairly involved sly lexer and parser.
+In main.py code you can see a fairly involved sly lexer and parser.
 
 Sly is here: <a href="https://github.com/dabeaz/sly">sly repo</a>.
 
 The .tc files are processable by <a href="https://github.com/bozsahin/ccglab">CCGlab</a>.
+
+So, the TC is interpreted by Lisp.
 
 enjoy.
 -cemB
