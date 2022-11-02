@@ -1,0 +1,34 @@
+Script started on Fri Dec 13 21:56:43 2019
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hexpr-zac> yalalr
+This is SBCL 1.5.1, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+STYLE-WARNING: Defining (*TOPCAT*) as a constant, even though the name follows
+the usual naming convention (names like *FOO*) for special variables
+[KWARNING: redefining COMMON-LISP-USER::PARSE in DEFUN
+
+===================================================
+Welcome to yalalr, version 2.0
+an interface to LALR parser of Mark Johnson
+---------------------------------------------------
+Ready.
+===================================================
+lexer ok
+SDD ok
+Grammar loaded. LALR tables set.
+> (ic-gen "code1")
+(LVAL A / RVAL B / RVAL C / RVAL D / MULT / ADD / RVAL E / NEG / RVAL F / ADD /
+ RVAL 5 / DIV / SUB / MOVE)
+> (ic-gen "code2")
+(LVAL B / RVAL F / NEG / RVAL 5 / DIV / MOVE)
+expr-zac> exit
+
+Script done on Fri Dec 13 21:57:20 2019

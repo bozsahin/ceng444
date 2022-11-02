@@ -1,0 +1,187 @@
+Script started on Fri Dec 13 22:10:20 2019
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hexpr-mips> yalalr
+This is SBCL 1.5.1, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+STYLE-WARNING: Defining (*TOPCAT*) as a constant, even though the name follows
+the usual naming convention (names like *FOO*) for special variables
+[KWARNING: redefining COMMON-LISP-USER::PARSE in DEFUN
+
+===================================================
+Welcome to yalalr, version 2.0
+an interface to LALR parser of Mark Johnson
+---------------------------------------------------
+Ready.
+===================================================
+lexer ok
+SDD ok
+Grammar loaded. LALR tables set.
+> (target-code-mips "source1")
+
+
+TAC code:
+
+
+(3AC MULT #:|t369| C D)
+(3AC ADD #:|t370| B #:|t369|)
+(2AC UMINUS #:|t371| E)
+(3AC ADD #:|t372| #:|t371| F)
+(3AC DIV #:|t373| #:|t372| 5)
+(3AC SUB #:|t374| #:|t370| #:|t373|)
+(2COPY A #:|t374|)
+
+MIPS-style code using register ops only:
+
+
+
+.data
+
+B: .word 0
+C: .word 0
+D: .word 0
+t369: .word 0
+t370: .word 0
+t371: .word 0
+E: .word 0
+F: .word 0
+t372: .word 0
+t373: .word 0
+t374: .word 0
+A: .word 0
+
+.text
+
+main:
+lw $t0,C
+lw $t1,D
+mul $t0,$t0,$t1
+sw $t0,t369
+lw $t0,B
+lw $t1,t369
+add $t0,$t0,$t1
+sw $t0,t370
+lw $t1,E
+sub $t0,$zero,$t1
+sw $t0,t371
+lw $t0,t371
+lw $t1,F
+add $t0,$t0,$t1
+sw $t0,t372
+lw $t0,t372
+li $t1,5
+div $t0,$t0,$t1
+sw $t0,t373
+lw $t0,t370
+lw $t1,t373
+sub $t0,$t0,$t1
+sw $t0,t374
+lw $t0,t374
+sw $t0,A
+NIL
+> (target-code-mips "source2")
+
+
+TAC code:
+
+
+(2AC UMINUS #:|t375| F)
+(3AC DIV #:|t376| #:|t375| 5)
+(2COPY B #:|t376|)
+
+MIPS-style code using register ops only:
+
+
+
+.data
+
+t375: .word 0
+F: .word 0
+t376: .word 0
+B: .word 0
+
+.text
+
+main:
+lw $t1,F
+sub $t0,$zero,$t1
+sw $t0,t375
+lw $t0,t375
+li $t1,5
+div $t0,$t0,$t1
+sw $t0,t376
+lw $t0,t376
+sw $t0,B
+NIL
+> (target-code-mips "source3")
+
+
+TAC code:
+
+
+(3AC MULT #:|t377| C 78.45)
+(3AC ADD #:|t378| B #:|t377|)
+(2AC UMINUS #:|t379| E)
+(3AC ADD #:|t380| #:|t379| F)
+(3AC DIV #:|t381| #:|t380| 12.5)
+(3AC SUB #:|t382| #:|t378| #:|t381|)
+(2COPY A #:|t382|)
+
+MIPS-style code using register ops only:
+
+
+
+.data
+
+B: .word 0
+C: .word 0
+t377: .word 0
+t378: .word 0
+t379: .word 0
+E: .word 0
+F: .word 0
+t380: .word 0
+t381: .word 0
+t382: .word 0
+A: .word 0
+
+.text
+
+main:
+lw $t0,C
+li $t1,78.45
+mul $t0,$t0,$t1
+sw $t0,t377
+lw $t0,B
+lw $t1,t377
+add $t0,$t0,$t1
+sw $t0,t378
+lw $t1,E
+sub $t0,$zero,$t1
+sw $t0,t379
+lw $t0,t379
+lw $t1,F
+add $t0,$t0,$t1
+sw $t0,t380
+lw $t0,t380
+li $t1,12.5
+div $t0,$t0,$t1
+sw $t0,t381
+lw $t0,t378
+lw $t1,t381
+sub $t0,$t0,$t1
+sw $t0,t382
+lw $t0,t382
+sw $t0,A
+NIL
+> (target-code-mips "source4")
+"Error before (B + C * 78.45 - ( - E + F ) / 12.5 ; $)"
+
+Script done on Fri Dec 13 22:10:42 2019

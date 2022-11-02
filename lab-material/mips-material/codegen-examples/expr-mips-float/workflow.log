@@ -1,0 +1,523 @@
+Script started on Fri Dec 13 22:25:49 2019
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hexpr-mips-float> yalalr
+This is SBCL 1.5.1, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+STYLE-WARNING: Defining (*TOPCAT*) as a constant, even though the name follows
+the usual naming convention (names like *FOO*) for special variables
+[KWARNING: redefining COMMON-LISP-USER::PARSE in DEFUN
+
+===================================================
+Welcome to yalalr, version 2.0
+an interface to LALR parser of Mark Johnson
+---------------------------------------------------
+Ready.
+===================================================
+lexer ok
+SDD ok
+[KGrammar loaded. LALR tables set.
+> (target-code-mips "source1" t)
+
+
+Symbol table at IC level:
+
+key         value
+(name blockno)  (type value)
+--------------------
+(B 0) : (VAR B)
+(C 0) : (VAR C)
+(D 0) : (VAR D)
+(t369 0) : (VAR t369)
+(t370 0) : (VAR t370)
+(t371 0) : (VAR t371)
+(E 0) : (VAR E)
+(F 0) : (VAR F)
+(t372 0) : (VAR t372)
+(5 0) : (INT 5)
+(t373 0) : (VAR t373)
+(t374 0) : (VAR t374)
+(A 0) : (VAR A)
+
+TAC IC code:
+
+(3AC MULT #:|t369| C D)
+(3AC ADD #:|t370| B #:|t369|)
+(2AC UMINUS #:|t371| E)
+(3AC ADD #:|t372| #:|t371| F)
+(3AC DIV #:|t373| #:|t372| 5)
+(3AC SUB #:|t374| #:|t370| #:|t373|)
+(2COPY A #:|t374|)
+
+QtSpim target code:
+
+.data
+
+B: .float 0.0
+C: .float 0.0
+D: .float 0.0
+t369: .float 0.0
+t370: .float 0.0
+t371: .float 0.0
+E: .float 0.0
+F: .float 0.0
+t372: .float 0.0
+t373: .float 0.0
+t374: .float 0.0
+A: .float 0.0
+zzeerroo: .float 0.0
+
+.text
+
+main:
+l.s $f0,C
+l.s $f2,D
+mul.s $f0,$f0,$f2
+s.s $f0,t369
+l.s $f0,B
+l.s $f2,t369
+add.s $f0,$f0,$f2
+s.s $f0,t370
+l.s $f2,E
+#loading dummy zero float to $f0
+l.s $f0,zzeerroo
+sub.s $f0,$f0,$f2
+s.s $f0,t371
+l.s $f0,t371
+l.s $f2,F
+add.s $f0,$f0,$f2
+s.s $f0,t372
+l.s $f0,t372
+#converting to float
+li $t0,5
+mtc1 $t0,$f6
+cvt.s.w $f2,$f6
+#conversion done
+div.s $f0,$f0,$f2
+s.s $f0,t373
+l.s $f0,t370
+l.s $f2,t373
+sub.s $f0,$f0,$f2
+s.s $f0,t374
+l.s $f0,t374
+s.s $f0,A
+#MIPs termination protocol:
+li $v0,10
+syscall
+.end main
+NIL
+> (target-code-mips "source1n" t)
+
+
+Symbol table at IC level:
+
+key         value
+(name blockno)  (type value)
+--------------------
+(5.0 0) : (FLOAT 5.0)
+(B 0) : (VAR B)
+(2.0 0) : (FLOAT 2.0)
+(C 0) : (VAR C)
+(10.0 0) : (FLOAT 10.0)
+(D 0) : (VAR D)
+(E 0) : (VAR E)
+(20.0 0) : (FLOAT 20.0)
+(F 0) : (VAR F)
+(t375 0) : (VAR t375)
+(t376 0) : (VAR t376)
+(t377 0) : (VAR t377)
+(t378 0) : (VAR t378)
+(5 0) : (INT 5)
+(t379 0) : (VAR t379)
+(t380 0) : (VAR t380)
+(A 0) : (VAR A)
+
+TAC IC code:
+
+(2COPY B 5.0)
+(2COPY C 2.0)
+(2COPY D 10.0)
+(2COPY E 10.0)
+(2COPY F 20.0)
+(3AC MULT #:|t375| C D)
+(3AC ADD #:|t376| B #:|t375|)
+(2AC UMINUS #:|t377| E)
+(3AC ADD #:|t378| #:|t377| F)
+(3AC DIV #:|t379| #:|t378| 5)
+(3AC SUB #:|t380| #:|t376| #:|t379|)
+(2COPY A #:|t380|)
+
+QtSpim target code:
+
+.data
+
+B: .float 0.0
+C: .float 0.0
+D: .float 0.0
+E: .float 0.0
+F: .float 0.0
+t375: .float 0.0
+t376: .float 0.0
+t377: .float 0.0
+t378: .float 0.0
+t379: .float 0.0
+t380: .float 0.0
+A: .float 0.0
+zzeerroo: .float 0.0
+
+.text
+
+main:
+li.s $f0,5.0
+s.s $f0,B
+li.s $f0,2.0
+s.s $f0,C
+li.s $f0,10.0
+s.s $f0,D
+li.s $f0,10.0
+s.s $f0,E
+li.s $f0,20.0
+s.s $f0,F
+l.s $f0,C
+l.s $f2,D
+mul.s $f0,$f0,$f2
+s.s $f0,t375
+l.s $f0,B
+l.s $f2,t375
+add.s $f0,$f0,$f2
+s.s $f0,t376
+l.s $f2,E
+#loading dummy zero float to $f0
+l.s $f0,zzeerroo
+sub.s $f0,$f0,$f2
+s.s $f0,t377
+l.s $f0,t377
+l.s $f2,F
+add.s $f0,$f0,$f2
+s.s $f0,t378
+l.s $f0,t378
+#converting to float
+li $t0,5
+mtc1 $t0,$f6
+cvt.s.w $f2,$f6
+#conversion done
+div.s $f0,$f0,$f2
+s.s $f0,t379
+l.s $f0,t376
+l.s $f2,t379
+sub.s $f0,$f0,$f2
+s.s $f0,t380
+l.s $f0,t380
+s.s $f0,A
+#MIPs termination protocol:
+li $v0,10
+syscall
+.end main
+NIL
+> (target-code-mips "source2" t)
+
+
+Symbol table at IC level:
+
+key         value
+(name blockno)  (type value)
+--------------------
+(t381 0) : (VAR t381)
+(F 0) : (VAR F)
+(5 0) : (INT 5)
+(t382 0) : (VAR t382)
+(B 0) : (VAR B)
+
+TAC IC code:
+
+(2AC UMINUS #:|t381| F)
+(3AC DIV #:|t382| #:|t381| 5)
+(2COPY B #:|t382|)
+
+QtSpim target code:
+
+.data
+
+t381: .float 0.0
+F: .float 0.0
+t382: .float 0.0
+B: .float 0.0
+zzeerroo: .float 0.0
+
+.text
+
+main:
+l.s $f2,F
+#loading dummy zero float to $f0
+l.s $f0,zzeerroo
+sub.s $f0,$f0,$f2
+s.s $f0,t381
+l.s $f0,t381
+#converting to float
+li $t0,5
+mtc1 $t0,$f6
+cvt.s.w $f2,$f6
+#conversion done
+div.s $f0,$f0,$f2
+s.s $f0,t382
+l.s $f0,t382
+s.s $f0,B
+#MIPs termination protocol:
+li $v0,10
+syscall
+.end main
+NIL
+> (target-code-mips "source2n" t)
+
+
+Symbol table at IC level:
+
+key         value
+(name blockno)  (type value)
+--------------------
+(12.0 0) : (FLOAT 12.0)
+(F 0) : (VAR F)
+(t383 0) : (VAR t383)
+(5 0) : (INT 5)
+(t384 0) : (VAR t384)
+(B 0) : (VAR B)
+
+TAC IC code:
+
+(2COPY F 12.0)
+(2AC UMINUS #:|t383| F)
+(3AC DIV #:|t384| #:|t383| 5)
+(2COPY B #:|t384|)
+
+QtSpim target code:
+
+.data
+
+F: .float 0.0
+t383: .float 0.0
+t384: .float 0.0
+B: .float 0.0
+zzeerroo: .float 0.0
+
+.text
+
+main:
+li.s $f0,12.0
+s.s $f0,F
+l.s $f2,F
+#loading dummy zero float to $f0
+l.s $f0,zzeerroo
+sub.s $f0,$f0,$f2
+s.s $f0,t383
+l.s $f0,t383
+#converting to float
+li $t0,5
+mtc1 $t0,$f6
+cvt.s.w $f2,$f6
+#conversion done
+div.s $f0,$f0,$f2
+s.s $f0,t384
+l.s $f0,t384
+s.s $f0,B
+#MIPs termination protocol:
+li $v0,10
+syscall
+.end main
+NIL
+> (target-code-mips "source3" t)
+
+
+Symbol table at IC level:
+
+key         value
+(name blockno)  (type value)
+--------------------
+(B 0) : (VAR B)
+(C 0) : (VAR C)
+(78.45 0) : (FLOAT 78.45)
+(t385 0) : (VAR t385)
+(t386 0) : (VAR t386)
+(t387 0) : (VAR t387)
+(E 0) : (VAR E)
+(F 0) : (VAR F)
+(t388 0) : (VAR t388)
+(12.5 0) : (FLOAT 12.5)
+(t389 0) : (VAR t389)
+(t390 0) : (VAR t390)
+(A 0) : (VAR A)
+
+TAC IC code:
+
+(3AC MULT #:|t385| C 78.45)
+(3AC ADD #:|t386| B #:|t385|)
+(2AC UMINUS #:|t387| E)
+(3AC ADD #:|t388| #:|t387| F)
+(3AC DIV #:|t389| #:|t388| 12.5)
+(3AC SUB #:|t390| #:|t386| #:|t389|)
+(2COPY A #:|t390|)
+
+QtSpim target code:
+
+.data
+
+B: .float 0.0
+C: .float 0.0
+t385: .float 0.0
+t386: .float 0.0
+t387: .float 0.0
+E: .float 0.0
+F: .float 0.0
+t388: .float 0.0
+t389: .float 0.0
+t390: .float 0.0
+A: .float 0.0
+zzeerroo: .float 0.0
+
+.text
+
+main:
+l.s $f0,C
+li.s $f2,78.45
+mul.s $f0,$f0,$f2
+s.s $f0,t385
+l.s $f0,B
+l.s $f2,t385
+add.s $f0,$f0,$f2
+s.s $f0,t386
+l.s $f2,E
+#loading dummy zero float to $f0
+l.s $f0,zzeerroo
+sub.s $f0,$f0,$f2
+s.s $f0,t387
+l.s $f0,t387
+l.s $f2,F
+add.s $f0,$f0,$f2
+s.s $f0,t388
+l.s $f0,t388
+li.s $f2,12.5
+div.s $f0,$f0,$f2
+s.s $f0,t389
+l.s $f0,t386
+l.s $f2,t389
+sub.s $f0,$f0,$f2
+s.s $f0,t390
+l.s $f0,t390
+s.s $f0,A
+#MIPs termination protocol:
+li $v0,10
+syscall
+.end main
+NIL
+> (target-code-mips "source3n" t)
+
+
+Symbol table at IC level:
+
+key         value
+(name blockno)  (type value)
+--------------------
+(10.0 0) : (FLOAT 10.0)
+(B 0) : (VAR B)
+(12.0 0) : (FLOAT 12.0)
+(C 0) : (VAR C)
+(14.0 0) : (FLOAT 14.0)
+(E 0) : (VAR E)
+(16.2 0) : (FLOAT 16.2)
+(F 0) : (VAR F)
+(78.45 0) : (FLOAT 78.45)
+(t391 0) : (VAR t391)
+(t392 0) : (VAR t392)
+(t393 0) : (VAR t393)
+(t394 0) : (VAR t394)
+(12.5 0) : (FLOAT 12.5)
+(t395 0) : (VAR t395)
+(t396 0) : (VAR t396)
+(A 0) : (VAR A)
+
+TAC IC code:
+
+(2COPY B 10.0)
+(2COPY C 12.0)
+(2COPY E 14.0)
+(2COPY F 16.2)
+(3AC MULT #:|t391| C 78.45)
+(3AC ADD #:|t392| B #:|t391|)
+(2AC UMINUS #:|t393| E)
+(3AC ADD #:|t394| #:|t393| F)
+(3AC DIV #:|t395| #:|t394| 12.5)
+(3AC SUB #:|t396| #:|t392| #:|t395|)
+(2COPY A #:|t396|)
+
+QtSpim target code:
+
+.data
+
+B: .float 0.0
+C: .float 0.0
+E: .float 0.0
+F: .float 0.0
+t391: .float 0.0
+t392: .float 0.0
+t393: .float 0.0
+t394: .float 0.0
+t395: .float 0.0
+t396: .float 0.0
+A: .float 0.0
+zzeerroo: .float 0.0
+
+.text
+
+main:
+li.s $f0,10.0
+s.s $f0,B
+li.s $f0,12.0
+s.s $f0,C
+li.s $f0,14.0
+s.s $f0,E
+li.s $f0,16.2
+s.s $f0,F
+l.s $f0,C
+li.s $f2,78.45
+mul.s $f0,$f0,$f2
+s.s $f0,t391
+l.s $f0,B
+l.s $f2,t391
+add.s $f0,$f0,$f2
+s.s $f0,t392
+l.s $f2,E
+#loading dummy zero float to $f0
+l.s $f0,zzeerroo
+sub.s $f0,$f0,$f2
+s.s $f0,t393
+l.s $f0,t393
+l.s $f2,F
+add.s $f0,$f0,$f2
+s.s $f0,t394
+l.s $f0,t394
+li.s $f2,12.5
+div.s $f0,$f0,$f2
+s.s $f0,t395
+l.s $f0,t392
+l.s $f2,t395
+sub.s $f0,$f0,$f2
+s.s $f0,t396
+l.s $f0,t396
+s.s $f0,A
+#MIPs termination protocol:
+li $v0,10
+syscall
+.end main
+NIL
+> (target-code-mips "source4" t)
+"Error before (B + C * 78.45 - ( - E + F ) / 12.5 ; $)"
+> [K> [K> [K> ^D[K> ^D
+expr-mips-float> exit
+
+Script done on Fri Dec 13 22:26:27 2019

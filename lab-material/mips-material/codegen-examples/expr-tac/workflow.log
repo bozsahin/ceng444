@@ -1,0 +1,45 @@
+Script started on Fri Dec 13 22:00:28 2019
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hexpr-tac> yalalr
+This is SBCL 1.5.1, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+STYLE-WARNING: Defining (*TOPCAT*) as a constant, even though the name follows
+the usual naming convention (names like *FOO*) for special variables
+[KWARNING: redefining COMMON-LISP-USER::PARSE in DEFUN
+
+===================================================
+Welcome to yalalr, version 2.0
+an interface to LALR parser of Mark Johnson
+---------------------------------------------------
+Ready.
+===================================================
+lexer ok
+SDD ok
+Grammar loaded. LALR tables set.
+> (ic-gen "code1")
+
+(3AC MULT #:|t-369| C D)
+(3AC ADD #:|t-370| B #:|t-369|)
+(2AC UMINUS #:|t-371| E)
+(3AC ADD #:|t-372| #:|t-371| F)
+(3AC DIV #:|t-373| #:|t-372| 5)
+(3AC SUB #:|t-374| #:|t-370| #:|t-373|)
+(2COPY A #:|t-374|)
+T
+> (ic-gen "code2")
+
+(2AC UMINUS #:|t-375| F)
+(3AC DIV #:|t-376| #:|t-375| 5)
+(2COPY B #:|t-376|)
+T
+expr-tac> exit
+
+Script done on Fri Dec 13 22:00:49 2019

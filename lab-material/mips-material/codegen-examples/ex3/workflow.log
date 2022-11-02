@@ -1,0 +1,46 @@
+Script started on Fri Dec 13 22:49:25 2019
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hex3> yalalr
+This is SBCL 1.5.1, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+STYLE-WARNING: Defining (*TOPCAT*) as a constant, even though the name follows
+the usual naming convention (names like *FOO*) for special variables
+[KWARNING: redefining COMMON-LISP-USER::PARSE in DEFUN
+
+===================================================
+Welcome to yalalr, version 2.0
+an interface to LALR parser of Mark Johnson
+---------------------------------------------------
+Ready.
+===================================================
+lexer ok
+SDD ok
+
+; file: /Users/bozsahin/myrepos/yalalr/examples/ex3/sdd.lisp
+; in: DEFUN IS-V
+;     (SPECIAL-OPERATOR-P E)
+; 
+; caught WARNING:
+;   Derived type of E is
+;     (VALUES (AND ATOM (NOT SYMBOL)) &OPTIONAL),
+;   conflicting with its asserted type
+;     SYMBOL.
+;   See also:
+;     The SBCL Manual, Node "Handling of Types"
+; 
+; compilation unit finished
+;   caught 1 WARNING condition
+Grammar loaded. LALR tables set.
+> (target-code "source.supervision")
+(((JOHN SAW THE MAN) ((SAW MAN) JOHN)) ((MARY WALKED) (WALK !MARY)))
+ex3> exit
+
+Script done on Fri Dec 13 22:49:32 2019

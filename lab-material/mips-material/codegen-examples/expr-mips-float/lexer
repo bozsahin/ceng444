@@ -1,0 +1,4 @@
+#!/bin/bash
+# $1: input $2: tokens wrapped in ()
+# -cem bozsahin
+sed -e 's/\([A-Za-z][A-Za-z]*\)/ \1 /g' -e 's/\([\:\=\+\/\*()]\)/ |\1| /g' -e 's/-/ |-| /g' -e 's/;/ |;| /g' -e '1,1s/^/(/' -e '$s/$/)/' $1 > $2

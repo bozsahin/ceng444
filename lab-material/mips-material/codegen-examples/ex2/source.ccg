@@ -1,0 +1,6 @@
+%this will tokenize differently depending on your lexer.
+% ex2.lexer knows about ccglab's comment operator.
+% but ex-expr.lexer is more generic lispwrapper
+
+john n := s/(s\np):\p.p !john;
+likes v := (s\np)/np : \x\y.!likes x y;
