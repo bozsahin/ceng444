@@ -493,11 +493,11 @@ def split_command (cline):  # splits a command line into command and list of arg
     
 def help ():
         print(" e .     | evaluates the python expression . if you know what you're doing")
-        print(' g .     | compiles . and generates its intermediate code as AST (a python dict)')
-        print(' m .     | generates target code of IC in file . (viz. Lisp code)')
+        print(' g .     | compiles . and generates its AST (a python dict)')
+        print(' m .     | generates target code of AST in file . (viz. Lisp code)')
         print(' o .     | runs the OS/shell command . at your own risk')
         print(' ?       | shows information about the current AST')
-        print(' & .     | saves current IC in file . ')
+        print(' & .     | saves current AST in file . ')
         print(' x       | exits')
         print(' h       | shows this help')
 
