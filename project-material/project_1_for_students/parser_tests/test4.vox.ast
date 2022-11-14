@@ -1,0 +1,33 @@
+TOP_LVL VAR_DECLS:
+var a;
+var b = [3.0, 5.0];
+var c = [True, False, b];
+TOP_LVL FUN_DECLS:
+fun a(){
+  VAR_DECLS:
+
+  STMTS:
+
+}
+fun b(a, b){
+  VAR_DECLS:
+    var c = a(#a);
+  STMTS:
+    while #a[(A+ b 3.0)] {
+      VAR_DECLS:
+    
+      STMTS:
+    
+    }
+    if True if True if True {
+      VAR_DECLS:
+        var c;
+      STMTS:
+        a = 3.0;
+        b = 5.0;
+    } else a = 5.0; endif else a = 6.0; endif endif
+    return b;
+}
+TOP_LVL STMTS:
+a = "hello";
+a = (A+ a[a[a[(A+ a 2.0)]]] 3.0);

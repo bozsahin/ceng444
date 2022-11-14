@@ -1,0 +1,15 @@
+//a program full of semantic errors (that we don't check in this assignment)
+var a;
+
+var b = [3, 5];
+
+var c = [true, false, b];
+fun a(){}
+fun b(a,b){
+  var c = a((#a));
+  while(#a[b+3]){}
+  if true if true if true {var c; a = 3; b= 5;} else a = 5; else a =6;
+  return b;
+}
+a = "hello";
+a = a[a[a[a+2]]]+3;

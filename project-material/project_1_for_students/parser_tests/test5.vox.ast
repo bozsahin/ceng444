@@ -1,0 +1,12 @@
+TOP_LVL VAR_DECLS:
+var important_advice = "Start writing your parser early!!! :)";
+TOP_LVL FUN_DECLS:
+fun fibonacci(n){
+  VAR_DECLS:
+
+  STMTS:
+    if (Lc<= n 1.0) return 1.0; else return (A+ fibonacci((A- n 1.0)) fibonacci((A- n 2.0))); endif
+}
+TOP_LVL STMTS:
+print important_advice;
+print fibonacci(10.0);

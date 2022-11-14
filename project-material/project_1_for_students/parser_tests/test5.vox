@@ -1,0 +1,7 @@
+var important_advice = "Start writing your parser early!!! :)";
+fun fibonacci(n){
+  if n <= 1 return 1;
+  else return fibonacci(n-1)+fibonacci(n-2);
+}
+print important_advice;
+print fibonacci(10);

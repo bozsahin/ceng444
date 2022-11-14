@@ -1,0 +1,2 @@
+eand or orand andor ==or else iffun fun ""else"" test.123.21332 test 123notvarname truefalse true // false "false"
+false "true" "falsee" falsee falsetrue truee

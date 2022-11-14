@@ -1,0 +1,10 @@
+Tokens:
+Token(type='ID', value='test', lineno=1, index=0, end=4)
+Token(type='ERROR', value='.', lineno=1, index=4, end=5)
+Token(type='ID', value='nofieldsinvox', lineno=1, index=5, end=18)
+Token(type='WHILE', value='while', lineno=2, index=52, end=57)
+Token(type='FUN', value='fun', lineno=2, index=58, end=61)
+Token(type='NUMBER', value=1231.312312, lineno=4, index=94, end=105)
+Token(type='ERROR', value='.', lineno=4, index=106, end=107)
+Token(type='NUMBER', value=12313.0, lineno=4, index=107, end=112)
+Token(type='ERROR', value='.', lineno=4, index=112, end=113)

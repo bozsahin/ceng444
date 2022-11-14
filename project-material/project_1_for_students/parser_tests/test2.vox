@@ -1,0 +1,20 @@
+var a;
+var b;
+var z = 100;
+fun f(f,f,f){
+  var f;
+  var x = 0;
+  var z = 0;
+  fun g(){} //erroneous
+  for(x=0;x < 10;x = x+1){
+    var z; //scopes are cool!
+    y = y+1;
+    while y > 0 {
+      var q = [2,4,6,true,false,#f(),undeclared];
+      y = y-1;
+      z = z+x;
+        if #true {} //wont parse
+        if true q = y-1;
+    }
+  }
+}

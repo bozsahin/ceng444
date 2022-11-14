@@ -1,0 +1,29 @@
+TOP_LVL VAR_DECLS:
+var a;
+var b;
+var z = 100.0;
+TOP_LVL FUN_DECLS:
+fun f(f, f, f){
+  VAR_DECLS:
+    var f;
+    var x = 0.0;
+    var z = 0.0;
+  STMTS:
+    ERROR_STMT;
+    for (x = 0.0;(Lc< x 10.0);x = (A+ x 1.0)) {
+      VAR_DECLS:
+        var z;
+      STMTS:
+        y = (A+ y 1.0);
+        while (Lc> y 0.0) {
+          VAR_DECLS:
+            var q = [2.0, 4.0, 6.0, True, False, #f(), undeclared];
+          STMTS:
+            y = (A- y 1.0);
+            z = (A+ z x);
+            ERROR_STMT;
+            if True q = (A- y 1.0); endif
+        }
+    }
+}
+TOP_LVL STMTS:

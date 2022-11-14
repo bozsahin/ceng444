@@ -1,0 +1,20 @@
+TOP_LVL VAR_DECLS:
+var a;
+TOP_LVL FUN_DECLS:
+
+TOP_LVL STMTS:
+ERROR_STMT;
+ERROR_STMT;
+while (Lc== a 3.0) {
+  VAR_DECLS:
+    var b;
+    var c;
+    var b;
+  STMTS:
+    print #b;
+    print b;
+    ERROR_STMT;
+    return c;
+    ERROR_STMT;
+    x = (Lor (Lor #y (Land #l #x())) (Lc< (A+ (A+ (A- (A- (A+ (A* 3.0 Au-6.0) 5.0) 3.0) Au-Au-Au-3.0) (A/ (A* 8.0 4.0) 2.0)) 7.0) (A* 5.0 f(a((A+ 4.0 5.0), 7.0, 88.0, x), 4.0))));
+}

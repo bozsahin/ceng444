@@ -1,0 +1,42 @@
+TOP_LVL VAR_DECLS:
+var a;
+var b;
+var y;
+var b;
+TOP_LVL FUN_DECLS:
+fun f(a, b, d){
+  VAR_DECLS:
+    var c;
+    var d;
+  STMTS:
+    e = #d;
+    if (Lc== x 3.0) {
+      VAR_DECLS:
+        var d;
+        var e = f();
+        var f = d;
+        var c;
+      STMTS:
+        ERROR_STMT;
+        ERROR_STMT;
+        ERROR_STMT;
+        e = (A+ y 3.0);
+    } endif
+}
+TOP_LVL STMTS:
+a = (A+ (A- (A+ Au-Au-a (A* 3.0 5.0)) 4.0) f);
+e = 345.0;
+while (Lc== a 3.0) {
+  VAR_DECLS:
+
+  STMTS:
+    x = 5.0;
+    if True {
+      VAR_DECLS:
+        var x;
+        var z;
+        var x;
+      STMTS:
+        for (;(Lc== a 3.0);y = (A+ x 1.0)) ERROR_STMT;
+    } endif
+}

@@ -1,0 +1,14 @@
+var a;
+var b = [[2,3,4],true]; //parse error, now the rest will be treated as stmts
+var c; // parse error again
+while(a == 3){
+  var b; //scopes to declare more variables
+  var c;
+  var b;
+  print #b;
+  print b;
+  var x; //wont parse
+  return c; //semantically incorrect but we don't check it for this assignment
+  x = 3 or 5; //wont parse
+  x = #y or #l and #x() or 3*-6+5-3----3+8*4/2+7 < 5*f(a(4+5,7,88,x),4);
+}
