@@ -20,3 +20,12 @@ def h(x,y):
 @d
 def g(x,y,z):
     print(x+y-z)
+
+# the following will give syntax errors. Decorators work on named functions
+# trying to decorate a nameless function
+#@d
+#(lambda x: lambda y: print(x+y))
+
+# trying to decorate a nameless function
+#@d
+#w= (lambda x: lambda y: print(x+y))
