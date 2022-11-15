@@ -2,7 +2,7 @@
 
 def d(fun):
     def inn(*args, **kwargs):
-        print("here is the input")
+        print("here is the input to the decorator:",fun,*args,**kwargs)
         fun(*args, **kwargs)
         print("done")
     return inn             # must always return an abstracted function
