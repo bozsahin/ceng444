@@ -54,23 +54,23 @@ def k32():
 #   or negation with squaring.
 
 # d4 is an example of a decorator with an argument. 
-#  It is the fixpoint of the factorial function.
 def d4(n):
     def inn(f):
-        def inn2():
-            if n > 0:
-                return n * f(n-1)
-            else:
-                return 1
-            return f
+        def inn2(arg):
+            return n * f(arg) 
+        return inn2
     return inn
 
-@d4(n)
-def fact(n):
-    if n > 0:
-        return n * fact(n-1)
-    else:
-        return 1
+@d4(7)
+def f4(n):
+    return n-1
+
+@d4(8)
+def f5(n):
+    return n ** 2
+
+# these are equivalent to e,g, f4=d4(7,f4)
+#  try f4(7) and f5(7)
 
 # The following will give syntax errors if uncommented. 
 # Decorators work on named functions
