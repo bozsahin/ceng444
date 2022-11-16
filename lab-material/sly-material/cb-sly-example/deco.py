@@ -1,24 +1,27 @@
-# decorator test: general case, any number of args -cem bozsahin 
+# Decorator demo: general case (any number of args), 
+#   composition, and fixpoint -cem bozsahin 
 
-# this is the decorator d, taking one function with many arguments
-def d(fun):                  
+# this is the decorator d1, taking one function with many arguments
+def d1(fun):                  
     def inn(*args, **kwargs):
         print("here is the input to the decorator:",fun,*args,**kwargs)
         fun(*args, **kwargs)
         print("done")
     return inn             # a decorator must always return a function
 
-@d
+@d1
 def f():
     print('f does this')
 
-# this is equilavent to f=d(f)
+# That is equilavent to f=d1(f)
 
-@d
+@d1
 def h(x,y):
     return x+y
 
-@d
+# That is equivalent to h=d1(h), i.e. same as 0-argument function above.
+
+@d1
 def g(x,y,z):
     print(x+y-z)
 
@@ -40,20 +43,39 @@ def d3(f):
 @d2
 @d3
 def k23():
-    return  10
+    return 5
 
 @d3
 @d2
 def k32():
-    return  10
+    return 5
 
-# try k23() and k32() fun calls
+# Try k23() and k32() function calls for composing squaring with negation
+#   or negation with squaring.
 
-# the following will give syntax errors. Decorators work on named functions
-# trying to decorate a nameless function
-#@d
+# d4 is an example of a decorator with an argument. 
+#  It is the fixpoint of the factorial function.
+def d4(n):
+    def inn(f):
+        def inn2():
+            if n > 0:
+                return n * f(n-1)
+            else:
+                return 1
+            return f
+    return inn
+
+@d4(n)
+def fact(n):
+    if n > 0:
+        return n * fact(n-1)
+    else:
+        return 1
+
+# The following will give syntax errors if uncommented. 
+# Decorators work on named functions
+#@d1
 #(lambda x: lambda y: print(x+y))
 
-# trying to decorate a nameless function
-#@d
+#@d1
 #w= (lambda x: lambda y: print(x+y))
