@@ -1,5 +1,5 @@
-# Decorator demo: general case (any number of args), 
-#   composition, and fixpoint -cem bozsahin 
+# Decorator demo: input function with zero or more args,
+#   composition, and decorator with args -cem bozsahin 
 
 # this is the decorator d1, taking one function with many arguments
 def d1(fun):                  
