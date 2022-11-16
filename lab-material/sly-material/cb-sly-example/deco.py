@@ -1,7 +1,8 @@
 # Decorator demo: input function with zero or more args,
-#   composition, and decorator with args -cem bozsahin 
+#   composition, decorator with args, and fixpoint decorators
+# -cem bozsahin 
 
-# this is the decorator d1, taking one function with many arguments
+# this is the decorator d1, taking one function with some arguments
 def d1(fun):                  
     def inn(*args, **kwargs):
         print("here is the input to the decorator:",fun,*args,**kwargs)
@@ -9,7 +10,7 @@ def d1(fun):
         print("done")
     return inn             # a decorator must always return a function
 
-@d1
+@d1                        # this is d1 decorating f
 def f():
     print('f does this')
 
@@ -68,6 +69,23 @@ def f4(n):
 @d4(8)
 def f5(n):
     return n ** 2
+
+# d5 is the fixpoint of the factorial, because fact=d5(fact)
+
+def d5(f):
+    def inn(n):
+        if n > 0:
+            return n * f(n-1)
+        else:
+            return 1
+    return inn
+
+@d5
+def fact(n):
+    if n > 0:
+        return n * fact(n-1)
+    else:
+        return 1
 
 # these are equivalent to e,g, f4=d4(7,f4)
 #  try f4(7) and f5(7)
