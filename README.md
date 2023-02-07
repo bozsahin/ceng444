@@ -79,25 +79,12 @@ RISC-V, using <code>Spike</code>. (We also accept LLVM, MIPS, x86 code generatio
   <br>Usually handed by the end of first spring term after completion, with a ceremony!
   <br>You will be a proud owner of 4 bottles of a yerli ve milli soft drink,
   <br>with a certificate in a low-budget print, namely my handwriting.
-  <br> And, since you asked, we can't afford 444 bottles; or 44, in fact.
 </ol>
 
-<b>2019-2020 Gazozuna Kompaylir odulleri:</b>
+<b>2022-2023 Gazozuna Kompaylır ödülü:</b>
 <ul>
-<li>Yunus Can Cakir: bison/flex -> LLVM
-<li>Emre Gullu: yalalr -> MIPS
-<li>Ozan Akin : rust -> x64
+<li>Lütfullah Erkaya: Vox -> sly -> RISC-V
 </ul>
 
-tebrix!
-
-Developer GOODIES:
-
-- Default python interpreters are SLOW. You may want to try <code><a href="https://pypy.org">pypy</a></code>.
- 
-- If you do make the switch, change <code>pip install sly</code> for sly install
-to <code>pip_pypy3 install sly</code>.
-
-- And when you want to call <code>python</code>, change it to <code>pypy3</code> call.
-
-- Command recall: In lunix/macosphere, you can recall earlier commands by installing <code>rlwrap</code>.
+Tebrikler!
+- Cem Bozşahin, Cem Önem
